@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9489C0BD1F6F000E0011E5AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9489C0BC1F6F000E0011E5AE /* AppDelegate.swift */; };
 		9489C0BF1F6F000E0011E5AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9489C0BE1F6F000E0011E5AE /* ViewController.swift */; };
 		9489C0C21F6F000E0011E5AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9489C0C01F6F000E0011E5AE /* Main.storyboard */; };
-		9489C0C41F6F000E0011E5AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9489C0C31F6F000E0011E5AE /* Assets.xcassets */; };
 		9489C0C71F6F000E0011E5AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9489C0C51F6F000E0011E5AE /* LaunchScreen.storyboard */; };
 		9489C0D21F6F000E0011E5AE /* NavETUTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9489C0D11F6F000E0011E5AE /* NavETUTests.swift */; };
+		9489C0E11F6F04690011E5AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9489C0DE1F6F04680011E5AE /* AppDelegate.swift */; };
+		9489C0E21F6F04690011E5AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9489C0DF1F6F04680011E5AE /* Assets.xcassets */; };
+		9489C0E31F6F04690011E5AE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9489C0E01F6F04680011E5AE /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,15 +28,15 @@
 
 /* Begin PBXFileReference section */
 		9489C0B91F6F000E0011E5AE /* NavETU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavETU.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9489C0BC1F6F000E0011E5AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9489C0BE1F6F000E0011E5AE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9489C0C11F6F000E0011E5AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9489C0C31F6F000E0011E5AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9489C0C61F6F000E0011E5AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		9489C0C81F6F000E0011E5AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9489C0CD1F6F000E0011E5AE /* NavETUTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NavETUTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9489C0D11F6F000E0011E5AE /* NavETUTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavETUTests.swift; sourceTree = "<group>"; };
 		9489C0D31F6F000F0011E5AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9489C0DE1F6F04680011E5AE /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9489C0DF1F6F04680011E5AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9489C0E01F6F04680011E5AE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,12 +78,11 @@
 		9489C0BB1F6F000E0011E5AE /* NavETU */ = {
 			isa = PBXGroup;
 			children = (
-				9489C0BC1F6F000E0011E5AE /* AppDelegate.swift */,
 				9489C0BE1F6F000E0011E5AE /* ViewController.swift */,
 				9489C0C01F6F000E0011E5AE /* Main.storyboard */,
-				9489C0C31F6F000E0011E5AE /* Assets.xcassets */,
 				9489C0C51F6F000E0011E5AE /* LaunchScreen.storyboard */,
-				9489C0C81F6F000E0011E5AE /* Info.plist */,
+				9489C0E01F6F04680011E5AE /* Info.plist */,
+				9489C0DD1F6F020C0011E5AE /* SupportingFiles */,
 			);
 			path = NavETU;
 			sourceTree = "<group>";
@@ -94,6 +94,15 @@
 				9489C0D31F6F000F0011E5AE /* Info.plist */,
 			);
 			path = NavETUTests;
+			sourceTree = "<group>";
+		};
+		9489C0DD1F6F020C0011E5AE /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				9489C0DE1F6F04680011E5AE /* AppDelegate.swift */,
+				9489C0DF1F6F04680011E5AE /* Assets.xcassets */,
+			);
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,8 +188,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9489C0E31F6F04690011E5AE /* Info.plist in Resources */,
 				9489C0C71F6F000E0011E5AE /* LaunchScreen.storyboard in Resources */,
-				9489C0C41F6F000E0011E5AE /* Assets.xcassets in Resources */,
+				9489C0E21F6F04690011E5AE /* Assets.xcassets in Resources */,
 				9489C0C21F6F000E0011E5AE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -199,8 +209,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9489C0E11F6F04690011E5AE /* AppDelegate.swift in Sources */,
 				9489C0BF1F6F000E0011E5AE /* ViewController.swift in Sources */,
-				9489C0BD1F6F000E0011E5AE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
