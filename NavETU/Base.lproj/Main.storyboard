@@ -9,13 +9,23 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--SearchVC-->
         <scene sceneID="Fmc-AN-bAd">
             <objects>
-                <viewController id="QY5-Ah-VKz" sceneMemberID="viewController">
+                <viewController id="QY5-Ah-VKz" customClass="SearchVC" customModule="NavETU" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ysc-KW-cyY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5S-4H-rZY">
+                                <rect key="frame" x="124" y="346" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="tap" destination="QY5-Ah-VKz" eventType="touchUpInside" id="9FV-C3-5rd"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="0.47058823529999999" green="0.50980392159999999" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="BuE-1c-eCG"/>
                     </view>
@@ -25,10 +35,10 @@
             </objects>
             <point key="canvasLocation" x="1233" y="311"/>
         </scene>
-        <!--View Controller-->
+        <!--MapVC-->
         <scene sceneID="6pN-EB-yUy">
             <objects>
-                <viewController id="577-N1-m2d" sceneMemberID="viewController">
+                <viewController id="577-N1-m2d" customClass="MapVC" customModule="NavETU" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xfz-wK-aUe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -42,9 +52,24 @@
             <point key="canvasLocation" x="1233" y="1014"/>
         </scene>
         <!--View Controller-->
+        <scene sceneID="GQf-hv-Hi7">
+            <objects>
+                <viewController storyboardIdentifier="ViewController" id="mZU-1v-WyJ" customClass="ViewController" customModule="NavETU" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wPH-oq-wyg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <viewLayoutGuide key="safeArea" id="Uak-4w-sEY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zPU-pj-2yU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2232" y="796"/>
+        </scene>
+        <!--MeVC-->
         <scene sceneID="VdA-5U-wKP">
             <objects>
-                <viewController id="Dio-fA-dBM" sceneMemberID="viewController">
+                <viewController id="Dio-fA-dBM" customClass="MeVC" customModule="NavETU" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DNV-vM-8eE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -57,10 +82,10 @@
             </objects>
             <point key="canvasLocation" x="1233" y="1699"/>
         </scene>
-        <!--View Controller-->
+        <!--MenuVC-->
         <scene sceneID="ZwB-zG-syT">
             <objects>
-                <viewController id="oy0-EX-cID" sceneMemberID="viewController">
+                <viewController id="oy0-EX-cID" customClass="MenuVC" customModule="NavETU" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yry-aj-zLh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -93,11 +118,11 @@
             </objects>
             <point key="canvasLocation" x="-509" y="-20"/>
         </scene>
-        <!--Item 1-->
+        <!--Menu-->
         <scene sceneID="jsx-lm-hwJ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="coV-PN-6gV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="kYi-zn-i42"/>
+                    <tabBarItem key="tabBarItem" title="Menu" id="kYi-zn-i42"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hZj-LX-SlR">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -112,11 +137,11 @@
             </objects>
             <point key="canvasLocation" x="441.60000000000002" y="-352.62368815592208"/>
         </scene>
-        <!--Item 2-->
+        <!--Search-->
         <scene sceneID="5Lv-4a-6cv">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Lk7-Lv-q77" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 2" id="L5g-IC-Y2w"/>
+                    <tabBarItem key="tabBarItem" title="Search" id="L5g-IC-Y2w"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="26r-OS-evc">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -131,11 +156,11 @@
             </objects>
             <point key="canvasLocation" x="441.60000000000002" y="311.24437781109447"/>
         </scene>
-        <!--Item-->
+        <!--Map-->
         <scene sceneID="rlD-0K-MAs">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SBD-ep-B2g" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="515-Oy-NCJ"/>
+                    <tabBarItem key="tabBarItem" title="Map" id="515-Oy-NCJ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vFf-k9-Sgz">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -150,11 +175,11 @@
             </objects>
             <point key="canvasLocation" x="444.80000000000001" y="1014.6926536731635"/>
         </scene>
-        <!--Item-->
+        <!--Me-->
         <scene sceneID="CcQ-Xj-577">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fOk-aR-kMu" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="6oR-5A-Tf5"/>
+                    <tabBarItem key="tabBarItem" title="Me" id="6oR-5A-Tf5"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FeD-59-ylg">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
