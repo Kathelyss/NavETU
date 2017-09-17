@@ -15,16 +15,17 @@
 		9489C0E21F6F04690011E5AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9489C0DF1F6F04680011E5AE /* Assets.xcassets */; };
 		9489C0E31F6F04690011E5AE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9489C0E01F6F04680011E5AE /* Info.plist */; };
 		9489C0E51F6F05BA0011E5AE /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9489C0E41F6F05BA0011E5AE /* Routable.swift */; };
-		9489C0E71F6F06260011E5AE /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9489C0E61F6F06260011E5AE /* MenuVC.swift */; };
+		9489C0E71F6F06260011E5AE /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9489C0E61F6F06260011E5AE /* HomeVC.swift */; };
 		9489C0E91F6F06360011E5AE /* MeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9489C0E81F6F06360011E5AE /* MeVC.swift */; };
 		9489C0EB1F6F064D0011E5AE /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9489C0EA1F6F064D0011E5AE /* SearchVC.swift */; };
 		9489C0ED1F6F065A0011E5AE /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9489C0EC1F6F065A0011E5AE /* MapVC.swift */; };
 		94DD7D7D1F6F078F0079E7B1 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DD7D7C1F6F078F0079E7B1 /* Router.swift */; };
 		94DD7D7F1F6F0C210079E7B1 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DD7D7E1F6F0C210079E7B1 /* Services.swift */; };
-		94DD7D891F6F0E680079E7B1 /* Menu.strings in Resources */ = {isa = PBXBuildFile; fileRef = 94DD7D8B1F6F0E680079E7B1 /* Menu.strings */; };
+		94DD7D891F6F0E680079E7B1 /* Home.strings in Resources */ = {isa = PBXBuildFile; fileRef = 94DD7D8B1F6F0E680079E7B1 /* Home.strings */; };
 		94DD7D961F6F0F4E0079E7B1 /* Me.strings in Resources */ = {isa = PBXBuildFile; fileRef = 94DD7D981F6F0F4E0079E7B1 /* Me.strings */; };
 		94DD7D9A1F6F0F5E0079E7B1 /* Search.strings in Resources */ = {isa = PBXBuildFile; fileRef = 94DD7D9C1F6F0F5E0079E7B1 /* Search.strings */; };
 		94DD7D9E1F6F0F680079E7B1 /* Map.strings in Resources */ = {isa = PBXBuildFile; fileRef = 94DD7DA01F6F0F680079E7B1 /* Map.strings */; };
+		94DD7DA31F6F12660079E7B1 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DD7DA21F6F12660079E7B1 /* String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,24 +50,25 @@
 		9489C0DF1F6F04680011E5AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9489C0E01F6F04680011E5AE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9489C0E41F6F05BA0011E5AE /* Routable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routable.swift; sourceTree = "<group>"; };
-		9489C0E61F6F06260011E5AE /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
+		9489C0E61F6F06260011E5AE /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		9489C0E81F6F06360011E5AE /* MeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeVC.swift; sourceTree = "<group>"; };
 		9489C0EA1F6F064D0011E5AE /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		9489C0EC1F6F065A0011E5AE /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		94DD7D7C1F6F078F0079E7B1 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		94DD7D7E1F6F0C210079E7B1 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
-		94DD7D8C1F6F0E700079E7B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Menu.strings; sourceTree = "<group>"; };
+		94DD7D8C1F6F0E700079E7B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Home.strings; sourceTree = "<group>"; };
 		94DD7D911F6F0F1E0079E7B1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		94DD7D921F6F0F1E0079E7B1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		94DD7D931F6F0F3C0079E7B1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		94DD7D941F6F0F450079E7B1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Menu.strings; sourceTree = "<group>"; };
-		94DD7D951F6F0F480079E7B1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Menu.strings; sourceTree = "<group>"; };
+		94DD7D941F6F0F450079E7B1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Home.strings; sourceTree = "<group>"; };
+		94DD7D951F6F0F480079E7B1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Home.strings; sourceTree = "<group>"; };
 		94DD7D971F6F0F4E0079E7B1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Me.strings; sourceTree = "<group>"; };
 		94DD7D991F6F0F540079E7B1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Me.strings; sourceTree = "<group>"; };
 		94DD7D9B1F6F0F5E0079E7B1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Search.strings; sourceTree = "<group>"; };
 		94DD7D9D1F6F0F630079E7B1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Search.strings; sourceTree = "<group>"; };
 		94DD7D9F1F6F0F680079E7B1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Map.strings; sourceTree = "<group>"; };
 		94DD7DA11F6F0F6B0079E7B1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Map.strings; sourceTree = "<group>"; };
+		94DD7DA21F6F12660079E7B1 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,13 +116,14 @@
 				9489C0E01F6F04680011E5AE /* Info.plist */,
 				9489C0DD1F6F020C0011E5AE /* SupportingFiles */,
 				9489C0E41F6F05BA0011E5AE /* Routable.swift */,
-				9489C0E61F6F06260011E5AE /* MenuVC.swift */,
+				9489C0E61F6F06260011E5AE /* HomeVC.swift */,
 				9489C0E81F6F06360011E5AE /* MeVC.swift */,
 				9489C0EA1F6F064D0011E5AE /* SearchVC.swift */,
 				9489C0EC1F6F065A0011E5AE /* MapVC.swift */,
 				94DD7D7C1F6F078F0079E7B1 /* Router.swift */,
 				94DD7D7E1F6F0C210079E7B1 /* Services.swift */,
 				94DD7D881F6F0E1B0079E7B1 /* Localizations */,
+				94DD7DA21F6F12660079E7B1 /* String.swift */,
 			);
 			path = NavETU;
 			sourceTree = "<group>";
@@ -146,7 +149,7 @@
 		94DD7D881F6F0E1B0079E7B1 /* Localizations */ = {
 			isa = PBXGroup;
 			children = (
-				94DD7D8B1F6F0E680079E7B1 /* Menu.strings */,
+				94DD7D8B1F6F0E680079E7B1 /* Home.strings */,
 				94DD7D981F6F0F4E0079E7B1 /* Me.strings */,
 				94DD7D9C1F6F0F5E0079E7B1 /* Search.strings */,
 				94DD7DA01F6F0F680079E7B1 /* Map.strings */,
@@ -241,7 +244,7 @@
 				9489C0E31F6F04690011E5AE /* Info.plist in Resources */,
 				94DD7D9E1F6F0F680079E7B1 /* Map.strings in Resources */,
 				9489C0C71F6F000E0011E5AE /* LaunchScreen.storyboard in Resources */,
-				94DD7D891F6F0E680079E7B1 /* Menu.strings in Resources */,
+				94DD7D891F6F0E680079E7B1 /* Home.strings in Resources */,
 				9489C0E21F6F04690011E5AE /* Assets.xcassets in Resources */,
 				94DD7D9A1F6F0F5E0079E7B1 /* Search.strings in Resources */,
 				94DD7D961F6F0F4E0079E7B1 /* Me.strings in Resources */,
@@ -265,9 +268,10 @@
 			files = (
 				94DD7D7D1F6F078F0079E7B1 /* Router.swift in Sources */,
 				9489C0EB1F6F064D0011E5AE /* SearchVC.swift in Sources */,
+				94DD7DA31F6F12660079E7B1 /* String.swift in Sources */,
 				9489C0E91F6F06360011E5AE /* MeVC.swift in Sources */,
 				9489C0E11F6F04690011E5AE /* AppDelegate.swift in Sources */,
-				9489C0E71F6F06260011E5AE /* MenuVC.swift in Sources */,
+				9489C0E71F6F06260011E5AE /* HomeVC.swift in Sources */,
 				9489C0ED1F6F065A0011E5AE /* MapVC.swift in Sources */,
 				9489C0E51F6F05BA0011E5AE /* Routable.swift in Sources */,
 				94DD7D7F1F6F0C210079E7B1 /* Services.swift in Sources */,
@@ -313,14 +317,14 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		94DD7D8B1F6F0E680079E7B1 /* Menu.strings */ = {
+		94DD7D8B1F6F0E680079E7B1 /* Home.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				94DD7D8C1F6F0E700079E7B1 /* Base */,
 				94DD7D941F6F0F450079E7B1 /* en */,
 				94DD7D951F6F0F480079E7B1 /* ru */,
 			);
-			name = Menu.strings;
+			name = Home.strings;
 			sourceTree = "<group>";
 		};
 		94DD7D981F6F0F4E0079E7B1 /* Me.strings */ = {

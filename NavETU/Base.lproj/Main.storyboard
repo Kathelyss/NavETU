@@ -82,14 +82,25 @@
             </objects>
             <point key="canvasLocation" x="1233" y="1699"/>
         </scene>
-        <!--MenuVC-->
+        <!--HomeVC-->
         <scene sceneID="ZwB-zG-syT">
             <objects>
-                <viewController id="oy0-EX-cID" customClass="MenuVC" customModule="NavETU" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="oy0-EX-cID" customClass="HomeVC" customModule="NavETU" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yry-aj-zLh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.47450980539999998" green="0.8392156959" blue="0.97647058959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VYL-Ri-YOE">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="qEE-QR-84x" firstAttribute="bottom" secondItem="VYL-Ri-YOE" secondAttribute="bottom" id="ALb-fG-QcE"/>
+                            <constraint firstItem="VYL-Ri-YOE" firstAttribute="top" secondItem="qEE-QR-84x" secondAttribute="top" id="ZWR-Be-Vh3"/>
+                            <constraint firstItem="VYL-Ri-YOE" firstAttribute="leading" secondItem="qEE-QR-84x" secondAttribute="leading" id="eKu-sf-nrk"/>
+                            <constraint firstItem="qEE-QR-84x" firstAttribute="trailing" secondItem="VYL-Ri-YOE" secondAttribute="trailing" id="gSp-HC-yee"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="qEE-QR-84x"/>
                     </view>
                     <navigationItem key="navigationItem" id="bxl-4u-7X4"/>
@@ -118,11 +129,11 @@
             </objects>
             <point key="canvasLocation" x="-509" y="-20"/>
         </scene>
-        <!--Menu-->
+        <!--Home-->
         <scene sceneID="jsx-lm-hwJ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="coV-PN-6gV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Menu" id="kYi-zn-i42"/>
+                    <tabBarItem key="tabBarItem" title="Home" id="kYi-zn-i42"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hZj-LX-SlR">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
