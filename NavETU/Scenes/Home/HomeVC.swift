@@ -17,7 +17,7 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.register(HomeCell.nib, forCellWithReuseIdentifier: "HomeCell")
-        title = "HomeVC.title".localized
+        title = "Home.title".localized
         
         dataSource.createFakeData()
     }

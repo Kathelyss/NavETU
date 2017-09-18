@@ -6,7 +6,7 @@
   Copyright © 2017 Екатерина Рыжова. All rights reserved.
 */
 
-"HomeVC.title" = "NavETU";
-"HomeVC.aboutLETI" = "About LETI";
-"HomeVC.faculties" = "Faculties";
-//"HomeVC." = "";
+"Home.title" = "NavETU";
+"Home.aboutLETI" = "About LETI";
+"Home.faculties" = "Faculties";
+//"Home." = "";

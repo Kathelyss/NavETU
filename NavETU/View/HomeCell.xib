@@ -37,12 +37,22 @@
                             <constraint firstAttribute="width" constant="10" id="OdA-vp-mAJ"/>
                         </constraints>
                     </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TvC-XH-G4B">
+                        <rect key="frame" x="16" y="64.5" width="304" height="1"/>
+                        <color key="backgroundColor" red="0.90980392160000001" green="0.92941176469999998" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="zzK-wp-xiP"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="l6V-zN-RE6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="27i-ER-h1s"/>
                     <constraint firstItem="l6V-zN-RE6" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="9S8-vz-aEb"/>
+                    <constraint firstAttribute="bottom" secondItem="TvC-XH-G4B" secondAttribute="bottom" id="GqZ-oA-Hll"/>
                     <constraint firstAttribute="trailing" secondItem="QiM-IG-wxj" secondAttribute="trailing" constant="16" id="MbQ-m4-Dtx"/>
                     <constraint firstItem="QiM-IG-wxj" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="l6V-zN-RE6" secondAttribute="trailing" constant="8" id="Sa2-qM-FJO"/>
+                    <constraint firstAttribute="trailing" secondItem="TvC-XH-G4B" secondAttribute="trailing" id="gQV-7R-Nb2"/>
+                    <constraint firstItem="TvC-XH-G4B" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="o8j-SS-BzO"/>
                     <constraint firstItem="QiM-IG-wxj" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="xWb-zf-JfT"/>
                 </constraints>
             </tableViewCellContentView>
@@ -52,7 +62,7 @@
                 <outlet property="forwardImageView" destination="QiM-IG-wxj" id="hNz-lf-m4Q"/>
                 <outlet property="titleLabel" destination="l6V-zN-RE6" id="931-AS-fpI"/>
             </connections>
-            <point key="canvasLocation" x="34" y="65"/>
+            <point key="canvasLocation" x="123" y="4"/>
         </tableViewCell>
     </objects>
     <resources>
