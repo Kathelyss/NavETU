@@ -9,7 +9,9 @@
 import UIKit
 
 class HomeVC: UIViewController {
-
+    @IBOutlet var container: UIView!
+    @IBOutlet var collectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
