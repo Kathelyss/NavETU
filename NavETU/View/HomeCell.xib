@@ -24,8 +24,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="65.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lalala" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l6V-zN-RE6">
-                        <rect key="frame" x="16" y="23.5" width="37.5" height="18"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l6V-zN-RE6">
+                        <rect key="frame" x="16" y="32.5" width="0.0" height="0.0"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
                         <color key="textColor" red="0.17254901959999999" green="0.22352941179999999" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>

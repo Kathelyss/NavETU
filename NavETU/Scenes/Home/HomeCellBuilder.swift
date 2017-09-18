@@ -7,9 +7,12 @@
 //
 
 import Foundation
+import UIKit
 
 struct HomeCellBuilder {
-    func populate() {
-        
+    static func populate(cell: UICollectionViewCell, with model: HomeCellModel) {
+        if let cell = cell as? HomeCell {
+            cell.titleLabel.text = model.title
+        }
     }
 }

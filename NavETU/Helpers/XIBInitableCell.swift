@@ -7,7 +7,8 @@
 //
 
 import Foundation
-/*
+import UIKit
+
 protocol XIBInitableCell {
     static var nib: UINib { get }
     static var cellID: String { get }
@@ -22,4 +23,3 @@ extension XIBInitableCell where Self: UITableViewCell {
     static var nib: UINib { return UINib(nibName: "\(self)", bundle: nil) }
     static var cellID: String { return "\(self)" }
 }
-*/

@@ -12,8 +12,8 @@ class MeVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        title = "Me"
+        
     }
 
     override func didReceiveMemoryWarning() {
