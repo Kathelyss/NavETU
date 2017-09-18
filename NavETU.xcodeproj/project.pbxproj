@@ -39,6 +39,7 @@
 		94DD7DA31F6F12660079E7B1 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DD7DA21F6F12660079E7B1 /* String.swift */; };
 		94DD7DA81F6FB2960079E7B1 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DD7DA61F6FB2960079E7B1 /* HomeCell.swift */; };
 		94DD7DA91F6FB2960079E7B1 /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94DD7DA71F6FB2960079E7B1 /* HomeCell.xib */; };
+		94FA69E51F6FE7EB009359A6 /* FacultiesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FA69E41F6FE7EB009359A6 /* FacultiesVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		94DD7DA21F6F12660079E7B1 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		94DD7DA61F6FB2960079E7B1 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		94DD7DA71F6FB2960079E7B1 /* HomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
+		94FA69E41F6FE7EB009359A6 /* FacultiesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacultiesVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,8 @@
 				94406CBE1F6FB59200A67656 /* HomeDataSource.swift */,
 				94406CC01F6FB5A200A67656 /* HomeCellBuilder.swift */,
 				94406CC21F6FB5B800A67656 /* HomeCellModel.swift */,
+				9489C0BE1F6F000E0011E5AE /* ViewController.swift */,
+				94FA69E41F6FE7EB009359A6 /* FacultiesVC.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -238,7 +242,6 @@
 				94406CCB1F6FB68500A67656 /* Me */,
 				94406CCE1F6FB6F600A67656 /* Search */,
 				94406CD51F6FB7E000A67656 /* Map */,
-				9489C0BE1F6F000E0011E5AE /* ViewController.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -368,6 +371,7 @@
 				94DD7DA31F6F12660079E7B1 /* String.swift in Sources */,
 				94406CCA1F6FB67100A67656 /* MeCellModel.swift in Sources */,
 				94406CC31F6FB5B800A67656 /* HomeCellModel.swift in Sources */,
+				94FA69E51F6FE7EB009359A6 /* FacultiesVC.swift in Sources */,
 				94DD7DA81F6FB2960079E7B1 /* HomeCell.swift in Sources */,
 				94406CD21F6FB71900A67656 /* SearchCellBuilder.swift in Sources */,
 				94406CD01F6FB70700A67656 /* SearchCellModel.swift in Sources */,

@@ -9,18 +9,16 @@
 import UIKit
 
 class ViewController: UIViewController, Routable {
-let storyboardName = "Main"
+    let storyboardName = "Main"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Next VC"
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
-
+    
 }
 

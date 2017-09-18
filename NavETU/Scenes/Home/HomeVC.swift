@@ -17,7 +17,8 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.register(HomeCell.nib, forCellWithReuseIdentifier: "HomeCell")
-        title = "Home"
+        title = "HomeVC.title".localized
+        
         dataSource.createFakeData()
     }
     
@@ -57,7 +58,10 @@ extension HomeVC: UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //service.router.presentMemberProfile(teammate: dataSource[indexPath])
+        guard let navigator = self.navigationController else { return }
+        
+        let router = Router()
+        router.presentFacultiesVC(controller: navigator, item: dataSource[indexPath])
     }
     
 }
@@ -67,7 +71,7 @@ extension HomeVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.bounds.width, height: 72)
+        return CGSize(width: collectionView.bounds.width, height: 70)
     }
     
 //    func collectionView(_ collectionView: UICollectionView,
