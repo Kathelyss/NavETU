@@ -13,7 +13,7 @@ class FacultiesVC: UIViewController, Routable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Faculties"
+        title = "Home.faculties".localized
         
     }
 
