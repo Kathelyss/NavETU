@@ -8,11 +8,9 @@
 
 import UIKit
 
-class FacultyCell: UICollectionViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
+class FacultyCell: UICollectionViewCell, XIBInitableCell {
+    @IBOutlet var container: UIView!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var forwardImageView: UIImageView!
 
 }

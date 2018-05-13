@@ -13,14 +13,14 @@ class HomeDataSource {
     var count: Int { return items.count }
  
     func createFakeData() {
-        self.items.append(HomeCellModel(title: "О ЛЭТИ"))
-        self.items.append(HomeCellModel(title: "Факультеты"))
-        self.items.append(HomeCellModel(title: "Кафедры"))
-        self.items.append(HomeCellModel(title: "Здравпункт"))
-        self.items.append(HomeCellModel(title: "Библиотеки"))
-        self.items.append(HomeCellModel(title: "Столовые, буфеты, кафе"))
-        self.items.append(HomeCellModel(title: "Туалеты"))
-        self.items.append(HomeCellModel(title: "Другое"))
+        self.items.append(HomeCellModel(title: "Home.aboutLETI".localized))
+        self.items.append(HomeCellModel(title: "Home.faculties".localized))
+        self.items.append(HomeCellModel(title: "Home.departments".localized))
+        self.items.append(HomeCellModel(title: "Home.healthUnit".localized))
+        self.items.append(HomeCellModel(title: "Home.libraries".localized))
+        self.items.append(HomeCellModel(title: "Home.food".localized))
+        self.items.append(HomeCellModel(title: "Home.wc".localized))
+        self.items.append(HomeCellModel(title: "Home.other".localized))
     }
     
     subscript(indexPath: IndexPath) -> HomeCellModel {

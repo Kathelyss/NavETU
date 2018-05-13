@@ -21,9 +21,38 @@ class Router {
         controller.pushViewController(vc, animated: true)
     }
     
-    func presentFacultiesVC(controller: UINavigationController, item: HomeCellModel) {
-        let vc = FacultiesVC.instantiate()
+    func presentItem(controller: UINavigationController, item: HomeCellModel, for key: Int) {
+        var vc = UIViewController()
+        switch key {
+        case 0:
+            vc = FacultiesVC.instantiate()
+//          vc = AboutVC.instantiate()
+        case 1:
+            vc = FacultiesVC.instantiate()
+        case 2:
+            vc = FacultiesVC.instantiate()
+//          vc = DepartmentsVC.instantiate()
+        case 3:
+            vc = FacultiesVC.instantiate()
+//          vc = HealthUnitVC.instantiate()
+        case 4:
+            vc = FacultiesVC.instantiate()
+//          vc = LibrariesVC.instantiate()
+        case 5:
+            vc = FacultiesVC.instantiate()
+//          vc = FoodVC.instantiate()
+        case 6:
+            vc = FacultiesVC.instantiate()
+//          vc = WaterClosetsVC.instantiate()
+        default:
+            vc = ViewController.instantiate()
+        }
         controller.pushViewController(vc, animated: true)
+        
+    }
+    
+    func presentFaculty(controller: UINavigationController, faculty: FacultiesCellModel, for key: Int) {
+        
     }
     
 }

@@ -9,11 +9,11 @@
 import UIKit
 
 class SearchVC: UIViewController {
-  
+    @IBOutlet var searchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Search"
+        title = "Search.title".localized
         
     }
 

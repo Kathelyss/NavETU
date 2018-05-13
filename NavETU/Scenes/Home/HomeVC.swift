@@ -14,6 +14,7 @@ class HomeVC: UIViewController {
     
     fileprivate var previousScrollOffset: CGFloat = 0
     let dataSource = HomeDataSource()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.register(HomeCell.nib, forCellWithReuseIdentifier: "HomeCell")
@@ -24,6 +25,32 @@ class HomeVC: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func createTestGraph() {
+        var nodes = [Node(type: .exit, number: nil, coordinates: Point(x: 4, y: 1), edges: nil),
+                     Node(type: .auditorium, number: 1, coordinates: Point(x: 2, y: 5), edges: nil),
+                     Node(type: .auditorium, number: 2, coordinates: Point(x: 7, y: 5), edges: nil),
+                     Node(type: .auditorium, number: 3, coordinates: Point(x: 2, y: 3), edges: nil),
+                     Node(type: .auditorium, number: 4, coordinates: Point(x: 6, y: 3), edges: nil),
+                     Node(type: .link, number: nil, coordinates: Point(x: 2, y: 4), edges: nil),
+                     Node(type: .link, number: nil, coordinates: Point(x: 4, y: 4), edges: nil),
+                     Node(type: .link, number: nil, coordinates: Point(x: 5, y: 4), edges: nil),
+                     Node(type: .link, number: nil, coordinates: Point(x: 6, y: 4), edges: nil),
+                     Node(type: .link, number: nil, coordinates: Point(x: 7, y: 4), edges: nil),
+                     Node(type: .stairs, number: nil, coordinates: Point(x: 5, y: 5), edges: nil),
+                     Node(type: .stairs, number: nil, coordinates: Point(x: 4, y: 5), edges: nil),
+                     Node(type: .auditorium, number: 5, coordinates: Point(x: 3, y: 5), edges: nil),
+                     Node(type: .auditorium, number: 6, coordinates: Point(x: 7, y: 5), edges: nil),
+                     Node(type: .auditorium, number: 7, coordinates: Point(x: 3, y: 4), edges: nil),
+                     Node(type: .auditorium, number: 8, coordinates: Point(x: 3, y: 2), edges: nil),
+                     Node(type: .auditorium, number: 9, coordinates: Point(x: 4, y: 2), edges: nil),
+                     Node(type: .auditorium, number: 10, coordinates: Point(x: 6, y: 2), edges: nil)]
+//        var edges: [Edge]
+//        var floors: [Floor]
+//        var floor1 = Floor(number: 1, edges: edges)
+//        var floor2 = Floor(number: 2, edges: edges)
+//        var testGraph = Building(floors: floors)
     }
     
 }
@@ -41,8 +68,7 @@ extension HomeVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: UICollectionViewCell!
-        cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCell",
-                                                  for: indexPath)
+        cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCell", for: indexPath)
         return cell
     }
     
@@ -61,7 +87,7 @@ extension HomeVC: UICollectionViewDelegate {
         guard let navigator = self.navigationController else { return }
         
         let router = Router()
-        router.presentFacultiesVC(controller: navigator, item: dataSource[indexPath])
+        router.presentItem(controller: navigator, item: dataSource[indexPath], for: indexPath.row)
     }
     
 }
@@ -74,11 +100,6 @@ extension HomeVC: UICollectionViewDelegateFlowLayout {
         return CGSize(width: collectionView.bounds.width, height: 70)
     }
     
-//    func collectionView(_ collectionView: UICollectionView,
-//                        layout collectionViewLayout: UICollectionViewLayout,
-//                        referenceSizeForHeaderInSection section: Int) -> CGSize {
-//        return CGSize(width: collectionView.bounds.width, height: 56)
-//    }
 }
 
 // MARK: UIScrollViewDelegate

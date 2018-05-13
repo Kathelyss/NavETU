@@ -12,7 +12,7 @@ class MeVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Me"
+        title = "Me.title".localized
         
     }
 

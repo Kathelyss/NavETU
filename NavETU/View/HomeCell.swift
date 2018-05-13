@@ -12,10 +12,5 @@ class HomeCell: UICollectionViewCell, XIBInitableCell {
     @IBOutlet var container: UIView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var forwardImageView: UIImageView!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-    }
-    
+     
 }

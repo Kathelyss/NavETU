@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jDZ-XM-z9j">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jDZ-XM-z9j">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,20 +17,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5S-4H-rZY">
-                                <rect key="frame" x="124" y="346" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <searchBar contentMode="redraw" placeholder="Номер аудитории" translatesAutoresizingMaskIntoConstraints="NO" id="Dfp-zS-AQ7">
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="tap" destination="QY5-Ah-VKz" eventType="touchUpInside" id="9FV-C3-5rd"/>
+                                    <outlet property="delegate" destination="QY5-Ah-VKz" id="PMs-eU-JDd"/>
                                 </connections>
-                            </button>
+                            </searchBar>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="BuE-1c-eCG" firstAttribute="leading" secondItem="Dfp-zS-AQ7" secondAttribute="leading" id="gtU-hA-Fr8"/>
+                            <constraint firstItem="BuE-1c-eCG" firstAttribute="trailing" secondItem="Dfp-zS-AQ7" secondAttribute="trailing" id="noK-xx-3jN"/>
+                            <constraint firstItem="Dfp-zS-AQ7" firstAttribute="top" secondItem="BuE-1c-eCG" secondAttribute="top" id="v7P-5f-pzu"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="BuE-1c-eCG"/>
                     </view>
                     <navigationItem key="navigationItem" id="ee4-eA-ZrR"/>
+                    <connections>
+                        <outlet property="searchBar" destination="Dfp-zS-AQ7" id="PDy-tl-uh6"/>
+                        <outlet property="searchDisplayController" destination="9TQ-7z-w15" id="HfG-Fg-eSk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pan-JZ-fz0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="9TQ-7z-w15">
+                    <connections>
+                        <outlet property="delegate" destination="QY5-Ah-VKz" id="gHH-gu-RCH"/>
+                        <outlet property="searchBar" destination="Dfp-zS-AQ7" id="zZQ-Yh-Aou"/>
+                        <outlet property="searchContentsController" destination="QY5-Ah-VKz" id="cKj-42-HOS"/>
+                        <outlet property="searchResultsDataSource" destination="QY5-Ah-VKz" id="371-00-FO6"/>
+                        <outlet property="searchResultsDelegate" destination="QY5-Ah-VKz" id="slr-Qc-d3R"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1233" y="311"/>
         </scene>
@@ -41,9 +58,45 @@
                     <view key="view" contentMode="scaleToFill" id="QUk-Np-gTy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="HMd-xc-KCu">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yKZ-ye-DeC">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FacultyCell" id="KWs-Gj-Pv7">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Kag-rZ-jDZ" id="z8Q-NB-V3a"/>
+                                    <outlet property="delegate" destination="Kag-rZ-jDZ" id="sK3-3D-3Yp"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cAw-IB-aKL" firstAttribute="trailing" secondItem="HMd-xc-KCu" secondAttribute="trailing" id="hNR-UU-lDS"/>
+                            <constraint firstItem="HMd-xc-KCu" firstAttribute="top" secondItem="cAw-IB-aKL" secondAttribute="top" id="iiB-7N-KUZ"/>
+                            <constraint firstItem="HMd-xc-KCu" firstAttribute="leading" secondItem="cAw-IB-aKL" secondAttribute="leading" id="oKv-0c-txJ"/>
+                            <constraint firstItem="cAw-IB-aKL" firstAttribute="bottom" secondItem="HMd-xc-KCu" secondAttribute="bottom" id="z8b-Xs-xoc"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="cAw-IB-aKL"/>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="HMd-xc-KCu" id="UTc-dU-k8g"/>
+                        <outlet property="container" destination="QUk-Np-gTy" id="DoS-rv-zbG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Mo-TN-CyZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

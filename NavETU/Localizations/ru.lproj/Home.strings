@@ -7,6 +7,29 @@
 */
 
 "Home.title" = "NavETU";
-"Home.aboutLETI" = "About LETI";
-"Home.faculties" = "Faculties";
-//"Home." = "";
+"Home.aboutLETI" = "О ЛЭТИ";
+"Home.faculties" = "Факультеты";
+"Home.departments" = "Кафедры";
+"Home.healthUnit" = "Здравпункт";
+"Home.libraries" = "Библиотеки";
+"Home.food" = "Столовые, буфеты, кафе";
+"Home.wc" = "Туалеты";
+"Home.other" = "Другое";
+
+"Home.FacultiesVC.FKTI" = "Факультет компьютерных технологий и информатики";
+"Home.FacultiesVC.FKTI.location" = "Помещение 2224";
+"Home.FacultiesVC.FRT" = "Факультет радиотехники и телекоммуникаций";
+"Home.FacultiesVC.FRT.location" = "Помещение 2202";
+"Home.FacultiesVC.FEL" = "Факультет электроники";
+"Home.FacultiesVC.FEL.location" = "Помещение 5373";
+"Home.FacultiesVC.FEA" = "Факультет электротехники и автоматики";
+"Home.FacultiesVC.FEA.location" = "Помещение 1162";
+"Home.FacultiesVC.FIBS" = "Факультет информационно-измерительных и биотехнических систем";
+"Home.FacultiesVC.FIBS.location" = "Помещение 5364";
+"Home.FacultiesVC.FEM" = "Факультет экономики и менеджмента";
+"Home.FacultiesVC.FEM.location" = "Помещение 5228";
+"Home.FacultiesVC.GF" = "Гуманитарный факультет";
+"Home.FacultiesVC.GF.location" = "Помещение 5328";
+"Home.FacultiesVC.OF" = "Открытый факультет";
+"Home.FacultiesVC.OF.location" = "Помещения 3309 - 3310";
+"Home.FacultiesVC.FFIO" = "Институт фундаментального инженерного образования";

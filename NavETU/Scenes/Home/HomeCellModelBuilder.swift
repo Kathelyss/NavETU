@@ -1,5 +1,5 @@
 //
-//  HomeCellBuilder.swift
+//  HomeCellModelBuilder.swift
 //  NavETU
 //
 //  Created by Екатерина Рыжова on 18.09.17.
@@ -9,10 +9,16 @@
 import Foundation
 import UIKit
 
+struct HomeCellModel  {
+    let title: String!
+    
+}
+
 struct HomeCellBuilder {
     static func populate(cell: UICollectionViewCell, with model: HomeCellModel) {
         if let cell = cell as? HomeCell {
             cell.titleLabel.text = model.title
         }
     }
+    
 }
