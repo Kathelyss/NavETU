@@ -132,14 +132,16 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Wjh-x8-bG4">
                                 <rect key="frame" x="329" y="80" width="30" height="63"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4MA-Wu-eyj">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4MA-Wu-eyj">
                                         <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="bNG-0z-9gr"/>
                                             <constraint firstAttribute="width" secondItem="4MA-Wu-eyj" secondAttribute="height" multiplier="1:1" id="jUX-E5-MzN"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="1"/>
+                                        <state key="normal" title="1">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="tapFirstFloorButton:" destination="577-N1-m2d" eventType="touchUpInside" id="PF5-3k-QP6"/>
                                         </connections>
@@ -152,6 +154,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="2">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="titleShadowColor" red="0.81176470590000005" green="0.81176470590000005" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
