@@ -19,9 +19,7 @@
 		94406CD71F6FB8F300A67656 /* XIBInitableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94406CD61F6FB8F300A67656 /* XIBInitableCell.swift */; };
 		9460FACB20A856AB00D63C2C /* FacultyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9460FAC920A856AB00D63C2C /* FacultyCell.swift */; };
 		9460FACC20A856AB00D63C2C /* FacultyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9460FACA20A856AB00D63C2C /* FacultyCell.xib */; };
-		9460FACE20A8683C00D63C2C /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9460FACD20A8683C00D63C2C /* Building.swift */; };
-		9460FAD020A8685000D63C2C /* Units.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9460FACF20A8685000D63C2C /* Units.swift */; };
-		9460FAD920A86DB800D63C2C /* Floor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9460FAD820A86DB800D63C2C /* Floor.swift */; };
+		9460FAD020A8685000D63C2C /* GraphUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9460FACF20A8685000D63C2C /* GraphUnits.swift */; };
 		9489C0BF1F6F000E0011E5AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9489C0BE1F6F000E0011E5AE /* ViewController.swift */; };
 		9489C0C21F6F000E0011E5AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9489C0C01F6F000E0011E5AE /* Main.storyboard */; };
 		9489C0C71F6F000E0011E5AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9489C0C51F6F000E0011E5AE /* LaunchScreen.storyboard */; };
@@ -44,6 +42,7 @@
 		94DD7DA81F6FB2960079E7B1 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DD7DA61F6FB2960079E7B1 /* HomeCell.swift */; };
 		94DD7DA91F6FB2960079E7B1 /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94DD7DA71F6FB2960079E7B1 /* HomeCell.xib */; };
 		94E1540620AC7E22009533B7 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E1540520AC7E22009533B7 /* Test.swift */; };
+		94E1540820ADEF17009533B7 /* Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E1540720ADEF17009533B7 /* Drawing.swift */; };
 		94F640012095CA4800F071F4 /* FacultiesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F640002095CA4800F071F4 /* FacultiesDataSource.swift */; };
 		94F640042095CAF800F071F4 /* FacultiesCellModelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F640032095CAF800F071F4 /* FacultiesCellModelBuilder.swift */; };
 		94FA69E51F6FE7EB009359A6 /* FacultiesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FA69E41F6FE7EB009359A6 /* FacultiesVC.swift */; };
@@ -72,9 +71,7 @@
 		94406CD61F6FB8F300A67656 /* XIBInitableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XIBInitableCell.swift; sourceTree = "<group>"; };
 		9460FAC920A856AB00D63C2C /* FacultyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacultyCell.swift; sourceTree = "<group>"; };
 		9460FACA20A856AB00D63C2C /* FacultyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FacultyCell.xib; sourceTree = "<group>"; };
-		9460FACD20A8683C00D63C2C /* Building.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Building.swift; sourceTree = "<group>"; };
-		9460FACF20A8685000D63C2C /* Units.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Units.swift; sourceTree = "<group>"; };
-		9460FAD820A86DB800D63C2C /* Floor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Floor.swift; sourceTree = "<group>"; };
+		9460FACF20A8685000D63C2C /* GraphUnits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphUnits.swift; sourceTree = "<group>"; };
 		9489C0B91F6F000E0011E5AE /* NavETU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavETU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9489C0BE1F6F000E0011E5AE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9489C0C11F6F000E0011E5AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -108,6 +105,7 @@
 		94DD7DA61F6FB2960079E7B1 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		94DD7DA71F6FB2960079E7B1 /* HomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
 		94E1540520AC7E22009533B7 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		94E1540720ADEF17009533B7 /* Drawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawing.swift; sourceTree = "<group>"; };
 		94F640002095CA4800F071F4 /* FacultiesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacultiesDataSource.swift; sourceTree = "<group>"; };
 		94F640032095CAF800F071F4 /* FacultiesCellModelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacultiesCellModelBuilder.swift; sourceTree = "<group>"; };
 		94FA69E41F6FE7EB009359A6 /* FacultiesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacultiesVC.swift; sourceTree = "<group>"; };
@@ -186,15 +184,12 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		9460FAD120A8685700D63C2C /* GraphModel */ = {
+		9460FAD120A8685700D63C2C /* TestAlg */ = {
 			isa = PBXGroup;
 			children = (
-				9460FACD20A8683C00D63C2C /* Building.swift */,
-				9460FAD820A86DB800D63C2C /* Floor.swift */,
-				9460FACF20A8685000D63C2C /* Units.swift */,
 				94E1540520AC7E22009533B7 /* Test.swift */,
 			);
-			path = GraphModel;
+			path = TestAlg;
 			sourceTree = "<group>";
 		};
 		9489C0B01F6F000E0011E5AE = {
@@ -221,10 +216,11 @@
 				9489C0C01F6F000E0011E5AE /* Main.storyboard */,
 				9489C0C51F6F000E0011E5AE /* LaunchScreen.storyboard */,
 				9489C0E01F6F04680011E5AE /* Info.plist */,
-				9489C0DD1F6F020C0011E5AE /* SupportingFiles */,
-				9460FAD120A8685700D63C2C /* GraphModel */,
+				94E1540920ADEF21009533B7 /* Drawing */,
+				9460FAD120A8685700D63C2C /* TestAlg */,
 				94DD7DA41F6FB2240079E7B1 /* Scenes */,
 				94DD7DA51F6FB26B0079E7B1 /* View */,
+				9489C0DD1F6F020C0011E5AE /* SupportingFiles */,
 				94406CD81F6FB96000A67656 /* Helpers */,
 				94DD7D881F6F0E1B0079E7B1 /* Localizations */,
 			);
@@ -280,6 +276,15 @@
 				9460FACA20A856AB00D63C2C /* FacultyCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		94E1540920ADEF21009533B7 /* Drawing */ = {
+			isa = PBXGroup;
+			children = (
+				9460FACF20A8685000D63C2C /* GraphUnits.swift */,
+				94E1540720ADEF17009533B7 /* Drawing.swift */,
+			);
+			path = Drawing;
 			sourceTree = "<group>";
 		};
 		94F640022095CA5400F071F4 /* Faculties */ = {
@@ -417,16 +422,15 @@
 				9489C0E91F6F06360011E5AE /* MeVC.swift in Sources */,
 				94406CC81F6FB66600A67656 /* MeCellBuilder.swift in Sources */,
 				94406CD71F6FB8F300A67656 /* XIBInitableCell.swift in Sources */,
+				94E1540820ADEF17009533B7 /* Drawing.swift in Sources */,
 				94F640012095CA4800F071F4 /* FacultiesDataSource.swift in Sources */,
-				9460FACE20A8683C00D63C2C /* Building.swift in Sources */,
 				94406CC61F6FB65600A67656 /* MeDataSource.swift in Sources */,
 				94406CD41F6FB76600A67656 /* MapDataSource.swift in Sources */,
-				9460FAD920A86DB800D63C2C /* Floor.swift in Sources */,
 				9489C0E11F6F04690011E5AE /* AppDelegate.swift in Sources */,
 				9489C0E71F6F06260011E5AE /* HomeVC.swift in Sources */,
 				94406CCD1F6FB6EF00A67656 /* SearchDataSource.swift in Sources */,
 				94406CBF1F6FB59200A67656 /* HomeDataSource.swift in Sources */,
-				9460FAD020A8685000D63C2C /* Units.swift in Sources */,
+				9460FAD020A8685000D63C2C /* GraphUnits.swift in Sources */,
 				9460FACB20A856AB00D63C2C /* FacultyCell.swift in Sources */,
 				9489C0ED1F6F065A0011E5AE /* MapVC.swift in Sources */,
 				9489C0E51F6F05BA0011E5AE /* Routable.swift in Sources */,

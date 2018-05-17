@@ -1,5 +1,5 @@
 //
-//  Units.swift
+//  GraphUnits.swift
 //  NavETU
 //
 //  Created by Екатерина Рыжова on 13.05.2018.
@@ -45,5 +45,23 @@ class Edge {
         secondNode = second
         self.length = length
         self.weight = weight
+    }
+}
+
+class Floor {
+    let number: Int
+    let edges: [Edge]
+    
+    init(number: Int, edges: [Edge]) {
+        self.number = number
+        self.edges = edges
+    }
+}
+
+class Building {
+    let floors: [Floor]
+    
+    init(floors: [Floor]) {
+        self.floors = floors
     }
 }

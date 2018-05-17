@@ -21,7 +21,7 @@ class HomeVC: UIViewController {
         title = "Home.title".localized
         
         dataSource.createFakeData()
-        createNodesAndFindPath(between: 1, and: 14)
+        findPath(between: 1, and: 16)
     }
     
     override func didReceiveMemoryWarning() {
