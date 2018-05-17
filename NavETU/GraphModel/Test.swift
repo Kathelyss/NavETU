@@ -46,28 +46,22 @@ class Path {
         } else {
             self.cumulativeWeight = 0
         }
-        
         self.node = node
         self.previousPath = path
     }
-}
-
-extension Path {
+    
     var array: [MyNode] {
         var array: [MyNode] = [self.node]
-        
         var iterativePath = self
         while let path = iterativePath.previousPath {
             array.append(path.node)
-            
             iterativePath = path
         }
-        
         return array
     }
 }
 
-func shortestPath(from source: MyNode, to destination: MyNode) -> Path? {
+func dijkstraAlgorithm(from source: MyNode, to destination: MyNode) -> Path? {
     var frontier: [Path] = [] {
         didSet {
             frontier.sort { return $0.cumulativeWeight < $1.cumulativeWeight } // the frontier has to be always ordered
@@ -77,25 +71,31 @@ func shortestPath(from source: MyNode, to destination: MyNode) -> Path? {
     frontier.append(Path(to: source)) // the frontier is made by a path that starts nowhere and ends in the source
     
     while !frontier.isEmpty {
-        let cheapestPathInFrontier = frontier.removeFirst() // getting the cheapest path available
-        guard !cheapestPathInFrontier.node.visited else { continue } // making sure we haven't visited the node already
+        let cheapestPathInFrontier = frontier.removeFirst()
+        guard !cheapestPathInFrontier.node.visited else { continue }
         
         if cheapestPathInFrontier.node === destination {
-            return cheapestPathInFrontier // found the cheapest path 😎
+            return cheapestPathInFrontier
         }
-        
         cheapestPathInFrontier.node.visited = true
-        
-        for connection in cheapestPathInFrontier.node.connections where !connection.to.visited { // adding new paths to our frontier
+        for connection in cheapestPathInFrontier.node.connections where !connection.to.visited {
+            // adding new paths to our frontier
             frontier.append(Path(to: connection.to, via: connection, previousPath: cheapestPathInFrontier))
         }
     }
     return nil
 }
 
-func createNodesAndFindPath() {
+func createNodesAndFindPath(between sourceNodeNumber: Int, and destinationNodeNumber: Int) {
     let nodes = createNodes()
-    findPath(from: nodes[16-1], to: nodes[4-1])
+    let path = dijkstraAlgorithm(from: nodes[sourceNodeNumber - 1], to: nodes[destinationNodeNumber - 1])
+    if let path = path {
+        let quickestPath: [String] = path.array.reversed().compactMap({$0}).map({$0.name})
+        let res = quickestPath.reduce("") { text, node in "\(text) ➝ \(node)"}
+        print("Path: \(res), length = \(path.cumulativeWeight)")
+    } else {
+        print("No path found")
+    }
 }
 
 func createNodes() -> [MyNode] {
@@ -126,7 +126,7 @@ func createNodes() -> [MyNode] {
     node2.connectTo(node: node6, weight: 1)
     node4.connectTo(node: node6, weight: 1)
     node6.connectTo(node: node7, weight: 2)
-    node7.connectTo(node: node8, weight: 8)
+    node7.connectTo(node: node8, weight: 1)
     node8.connectTo(node: node9, weight: 1)
     node9.connectTo(node: node10, weight: 1)
     node5.connectTo(node: node9, weight: 1)
@@ -144,17 +144,6 @@ func createNodes() -> [MyNode] {
     node14.connectTo(node: node21, weight: 1)
     return [node1, node2, node3, node4, node5, node6, node7, node8, node9, node10,
             node11, node12, node13, node14, node15, node16, node17, node18, node19, node20, node21]
-}
-
-func findPath(from source: MyNode, to destination: MyNode) {
-    let path = shortestPath(from: source, to: destination)
-    if let path = path {
-        let quickestPath: [String] = path.array.reversed().compactMap({$0}).map({$0.name})
-        let res = quickestPath.reduce("") { text, node in "\(text)➝\(node)"}
-        print("Quickest path: \(res), summary weight = \(path.cumulativeWeight / 2)")
-    } else {
-        print("No path found")
-    }
 }
 
 ////////

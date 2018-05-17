@@ -74,7 +74,7 @@ class MapVC: UIViewController, UIScrollViewDelegate {
         return imageView
     }
     
-    func scrollViewDidZoom(scrollView: UIScrollView) {
+    func scrollViewDidZoom(_ scrollView: UIScrollView) {
         let imageViewSize = imageView.frame.size
         let scrollViewSize = scrollView.bounds.size
         
@@ -90,11 +90,12 @@ class MapVC: UIViewController, UIScrollViewDelegate {
     }
     
     func setupGestureRecognizer() {
-        let doubleTap = UITapGestureRecognizer(target: scrollView, action: "handleDoubleTap:")
+        let doubleTap = UITapGestureRecognizer(target: scrollView, action: #selector(handleDoubleTap))
         doubleTap.numberOfTapsRequired = 2
         scrollView.addGestureRecognizer(doubleTap)
     }
     
+    @objc
     func handleDoubleTap(recognizer: UITapGestureRecognizer) {
         if (scrollView.zoomScale > scrollView.minimumZoomScale) {
             scrollView.setZoomScale(scrollView.minimumZoomScale, animated: true)
