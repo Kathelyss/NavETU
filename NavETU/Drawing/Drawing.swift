@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class Drawing {
     let graph: Building
@@ -14,7 +15,7 @@ class Drawing {
     init(graph: Building) {
         self.graph = graph
     }
-
+    
     func createTestGraph() -> Building {
         let nodes = createNodes()
         let edge17 = Edge(first: nodes[1], second: nodes[7], length: 3, weight: 1)
@@ -28,7 +29,7 @@ class Drawing {
         let edge310 = Edge(first: nodes[3], second: nodes[10], length: 1, weight: 1)
         let edge811 = Edge(first: nodes[8], second: nodes[11], length: 1, weight: 1)
         //
-        let edge1112 = Edge(first: nodes[11], second: nodes[12], length: 1, weight: 1)
+        //        let edge1112 = Edge(first: nodes[11], second: nodes[12], length: 1, weight: 1)
         //
         let edge1219 = Edge(first: nodes[12], second: nodes[19], length: 1, weight: 1)
         let edge1315 = Edge(first: nodes[13], second: nodes[15], length: 1, weight: 1)

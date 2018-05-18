@@ -183,7 +183,7 @@
                     <connections>
                         <outlet property="firstFloorButton" destination="4MA-Wu-eyj" id="5YK-YD-JdN"/>
                         <outlet property="floorButtons" destination="Wjh-x8-bG4" id="qRW-dq-sLW"/>
-                        <outlet property="imageView" destination="itV-ZJ-CZY" id="TCO-VZ-pVO"/>
+                        <outlet property="mapView" destination="itV-ZJ-CZY" id="TCO-VZ-pVO"/>
                         <outlet property="scrollView" destination="X88-Aa-tGC" id="gB8-D2-3Zu"/>
                         <outlet property="secondFloorButton" destination="ugF-Ff-OXm" id="Qoe-zA-gdo"/>
                     </connections>

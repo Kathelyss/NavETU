@@ -19,7 +19,7 @@ enum NodeType {
 
 class Node {
     let type: NodeType
-    let name: String // if it is an auditorium
+    let name: String
     let coordinates: Point
     var isVisited: Bool = false
     var edges: [Edge] = []
@@ -66,14 +66,14 @@ class Path {
     public let node: Node
     public let previousPath: Path?
     
-    var array: [Node] {
-        var array: [Node] = [self.node]
+    var nodes: [Node] {
+        var nodes: [Node] = [self.node]
         var iterativePath = self
         while let path = iterativePath.previousPath {
-            array.append(path.node)
+            nodes.append(path.node)
             iterativePath = path
         }
-        return array
+        return nodes
     }
  
     init(to node: Node, via edge: Edge? = nil, previousPath path: Path? = nil) {

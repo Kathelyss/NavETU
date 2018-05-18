@@ -21,13 +21,7 @@ class HomeVC: UIViewController {
         title = "Home.title".localized
         
         dataSource.createFakeData()
-        findPath(between: 16, and: 4)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
+    }    
 }
 
 // MARK: UICollectionViewDataSource

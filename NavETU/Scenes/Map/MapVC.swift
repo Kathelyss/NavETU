@@ -10,40 +10,54 @@ import UIKit
 
 class MapVC: UIViewController, UIScrollViewDelegate {
     @IBOutlet var scrollView: UIScrollView!
-    @IBOutlet var imageView: UIImageView!
+    @IBOutlet var mapView: UIImageView!
     @IBOutlet var floorButtons: UIStackView!
     @IBOutlet var firstFloorButton: UIButton!
     @IBOutlet var secondFloorButton: UIButton!
+    var pathView: PathView!
+    var pathViewIsAdded: Bool = false
     
     @IBAction func tapFirstFloorButton(_ sender: UIButton) {
         setBackground(color1: #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1), color2: #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1), for: firstFloorButton, and: secondFloorButton)
-        imageView.image = #imageLiteral(resourceName: "floor1")
+        mapView.image = #imageLiteral(resourceName: "floor1")
+        pathView.frame = mapView.bounds
     }
     
     @IBAction func tapSecondFloorButton(_ sender: UIButton) {
         setBackground(color1: #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1), color2: #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1), for: firstFloorButton, and: secondFloorButton)
-        imageView.image = #imageLiteral(resourceName: "floor2")
+        mapView.image = #imageLiteral(resourceName: "floor2")
+        pathView.frame = mapView.bounds
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Map.title".localized
-        imageView.image = #imageLiteral(resourceName: "floor1")
+        mapView.image = #imageLiteral(resourceName: "floor1")
         scrollView.minimumZoomScale = 0.3
         scrollView.maximumZoomScale = 1.0
         scrollView.zoomScale = scrollView.minimumZoomScale
-        scrollView.contentSize = imageView.frame.size
+        scrollView.contentSize = mapView.frame.size
         setupFloorButtons()
         firstFloorButton.backgroundColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+        
+        findPath(between: 16, and: 4)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         scrollViewDidZoom(scrollView)
+
+        pathView = PathView(frame: mapView.bounds)
+        pathView.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
+        if pathViewIsAdded == false {
+            mapView.addSubview(pathView)
+            pathViewIsAdded = true
+        }
+        pathView.setNeedsDisplay()
     }
     
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        return imageView
+        return mapView
     }
 
     func setBackground(color1: UIColor, color2: UIColor, for button1: UIButton, and button2: UIButton) {
@@ -64,7 +78,7 @@ class MapVC: UIViewController, UIScrollViewDelegate {
     }
 
     func scrollViewDidZoom(_ scrollView: UIScrollView) {
-        let imageViewSize = imageView.frame.size
+        let imageViewSize = mapView.frame.size
         let scrollViewSize = scrollView.bounds.size
         let verticalPadding = imageViewSize.height < scrollViewSize.height ?
             (scrollViewSize.height - imageViewSize.height) / 2 : 0
