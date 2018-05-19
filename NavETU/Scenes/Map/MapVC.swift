@@ -42,13 +42,12 @@ class MapVC: UIViewController, UIScrollViewDelegate {
         scrollView.zoomScale = scrollView.minimumZoomScale
         scrollView.contentSize = mapView.frame.size
         setupFloorButtons()
-        firstFloorButton.backgroundColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
         
         graph = createBuildingGraph()
         if let tmpBuilding = graph {
             //сделать из графа один большой массив [Node]
             let nodes: [Node] = tmpBuilding.floors.compactMap({$0.nodes}).reduce([], +)
-            path = findPath(in: nodes, from: 18, to: 13)
+            path = findPath(in: nodes, from: 18, to: 1)
         }
     }
     
@@ -56,13 +55,18 @@ class MapVC: UIViewController, UIScrollViewDelegate {
         super.viewDidAppear(animated)
         scrollViewDidZoom(scrollView)
         
-        pathView = PathView(frame: mapView.bounds)
         if pathViewIsAdded == false {
+            pathView = PathView(frame: mapView.bounds)
             pathView.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
-            pathView.allPathNodes = path
-            pathView.currentFloorNumber = 0
             mapView.addSubview(pathView)
             pathViewIsAdded = true
+            
+            pathView.allPathNodes = path
+            //для корректного отображения этажа, на кот. расположена sourceNode
+            pathView.currentFloorNumber = pathView.allPathNodes[0].floor
+            mapView.image = path[0].floor == 0 ? #imageLiteral(resourceName: "floor1") : #imageLiteral(resourceName: "floor2")
+            firstFloorButton.backgroundColor = path[0].floor == 0 ? #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1) : #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+            secondFloorButton.backgroundColor = path[0].floor == 1 ? #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1) : #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         }
     }
     

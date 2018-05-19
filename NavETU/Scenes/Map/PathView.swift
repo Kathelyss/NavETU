@@ -16,7 +16,8 @@ class PathView: UIView {
     public var allPathNodes: [Node] = []
     public var currentFloorNumber: Int = 0 {
         didSet {
-            let currentFloorNodes: [Node] = allPathNodes.filter { $0.floor == currentFloorNumber }
+            let tmpAllNodes = allPathNodes
+            let currentFloorNodes: [Node] = tmpAllNodes.filter { $0.floor == currentFloorNumber }
             nodes = currentFloorNodes
         }
     }
