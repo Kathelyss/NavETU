@@ -88,12 +88,9 @@ func createBuildingGraph() -> Building {
     node20.connectTo(node: node21, edgeLength: 4, edgeWeight: 1)
     node21.connectTo(node: node14, edgeLength: 4, edgeWeight: 1)
     
-    let floor1 = Floor(number: 1,
-                       nodes: [node1, node2, node3, node4, node5,
-                               node6, node7, node8, node9, node10, node11])
-    let floor2 = Floor(number: 2,
-                       nodes: [node12, node13, node14, node15, node16,
-                               node17, node18, node19, node20, node21])
-    
+    let floor1 = Floor(number: 1, nodes: [node1, node2, node3, node4, node5,
+                                          node6, node7, node8, node9, node10, node11])
+    let floor2 = Floor(number: 2, nodes: [node12, node13, node14, node15, node16,
+                                          node17, node18, node19, node20, node21])
     return Building(floors: [floor1, floor2])
 }
