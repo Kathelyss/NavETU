@@ -75,7 +75,7 @@ extension HomeVC: UICollectionViewDelegateFlowLayout {
 extension HomeVC: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let currentOffset = scrollView.contentOffset.y
-        let velocity = currentOffset - previousScrollOffset
+//        let velocity = currentOffset - previousScrollOffset
         previousScrollOffset = currentOffset
     }
 }
