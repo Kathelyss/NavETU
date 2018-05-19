@@ -7,10 +7,11 @@
 //
 
 import Foundation
+import UIKit
 
 struct Point {
-    let x: Double
-    let y: Double
+    let x: CGFloat
+    let y: CGFloat
 }
 
 enum NodeType {
@@ -21,14 +22,15 @@ class Node {
     let type: NodeType
     let name: String
     let coordinates: Point
+    public let floor: Int
     var isVisited: Bool = false
     var edges: [Edge] = []
     
-    init(type: NodeType, name: String, coordinates: Point, edges: [Edge]) {
+    init(type: NodeType, name: String, coordinates: Point, floor: Int) {
         self.type = type
         self.name = name
         self.coordinates = coordinates
-        self.edges = edges
+        self.floor = floor
     }
     
     func connectTo(node: Node, edgeLength: Int, edgeWeight: Int) {
@@ -52,12 +54,20 @@ class Edge {
 }
 
 class Floor {
-    let number: Int
-    let edges: [Edge]
+    public let number: Int
+    public var nodes: [Node]
     
-    init(number: Int, edges: [Edge]) {
+    init(number: Int, nodes: [Node]) {
         self.number = number
-        self.edges = edges
+        self.nodes = nodes
+    }
+}
+
+class Building {
+    public let floors: [Floor]
+    
+    init(floors: [Floor]) {
+        self.floors = floors
     }
 }
 
@@ -86,12 +96,4 @@ class Path {
         self.previousPath = path
     }
     
-}
-
-class Building {
-    let floors: [Floor]
-    
-    init(floors: [Floor]) {
-        self.floors = floors
-    }
 }

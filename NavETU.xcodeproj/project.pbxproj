@@ -42,7 +42,6 @@
 		94DD7DA81F6FB2960079E7B1 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DD7DA61F6FB2960079E7B1 /* HomeCell.swift */; };
 		94DD7DA91F6FB2960079E7B1 /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94DD7DA71F6FB2960079E7B1 /* HomeCell.xib */; };
 		94E1540620AC7E22009533B7 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E1540520AC7E22009533B7 /* Test.swift */; };
-		94E1540820ADEF17009533B7 /* Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E1540720ADEF17009533B7 /* Drawing.swift */; };
 		94E1540B20AF20A9009533B7 /* PathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E1540A20AF20A9009533B7 /* PathView.swift */; };
 		94F640012095CA4800F071F4 /* FacultiesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F640002095CA4800F071F4 /* FacultiesDataSource.swift */; };
 		94F640042095CAF800F071F4 /* FacultiesCellModelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F640032095CAF800F071F4 /* FacultiesCellModelBuilder.swift */; };
@@ -106,7 +105,6 @@
 		94DD7DA61F6FB2960079E7B1 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		94DD7DA71F6FB2960079E7B1 /* HomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
 		94E1540520AC7E22009533B7 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
-		94E1540720ADEF17009533B7 /* Drawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawing.swift; sourceTree = "<group>"; };
 		94E1540A20AF20A9009533B7 /* PathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathView.swift; sourceTree = "<group>"; };
 		94F640002095CA4800F071F4 /* FacultiesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacultiesDataSource.swift; sourceTree = "<group>"; };
 		94F640032095CAF800F071F4 /* FacultiesCellModelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacultiesCellModelBuilder.swift; sourceTree = "<group>"; };
@@ -187,14 +185,6 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		9460FAD120A8685700D63C2C /* TestAlg */ = {
-			isa = PBXGroup;
-			children = (
-				94E1540520AC7E22009533B7 /* Test.swift */,
-			);
-			path = TestAlg;
-			sourceTree = "<group>";
-		};
 		9489C0B01F6F000E0011E5AE = {
 			isa = PBXGroup;
 			children = (
@@ -219,8 +209,7 @@
 				9489C0C01F6F000E0011E5AE /* Main.storyboard */,
 				9489C0C51F6F000E0011E5AE /* LaunchScreen.storyboard */,
 				9489C0E01F6F04680011E5AE /* Info.plist */,
-				94E1540920ADEF21009533B7 /* Drawing */,
-				9460FAD120A8685700D63C2C /* TestAlg */,
+				94E1540920ADEF21009533B7 /* Model */,
 				94DD7DA41F6FB2240079E7B1 /* Scenes */,
 				94DD7DA51F6FB26B0079E7B1 /* View */,
 				9489C0DD1F6F020C0011E5AE /* SupportingFiles */,
@@ -281,13 +270,13 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		94E1540920ADEF21009533B7 /* Drawing */ = {
+		94E1540920ADEF21009533B7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				9460FACF20A8685000D63C2C /* GraphUnits.swift */,
-				94E1540720ADEF17009533B7 /* Drawing.swift */,
+				94E1540520AC7E22009533B7 /* Test.swift */,
 			);
-			path = Drawing;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		94F640022095CA5400F071F4 /* Faculties */ = {
@@ -425,7 +414,6 @@
 				9489C0E91F6F06360011E5AE /* MeVC.swift in Sources */,
 				94406CC81F6FB66600A67656 /* MeCellBuilder.swift in Sources */,
 				94406CD71F6FB8F300A67656 /* XIBInitableCell.swift in Sources */,
-				94E1540820ADEF17009533B7 /* Drawing.swift in Sources */,
 				94E1540B20AF20A9009533B7 /* PathView.swift in Sources */,
 				94F640012095CA4800F071F4 /* FacultiesDataSource.swift in Sources */,
 				94406CC61F6FB65600A67656 /* MeDataSource.swift in Sources */,

@@ -14,19 +14,23 @@ class MapVC: UIViewController, UIScrollViewDelegate {
     @IBOutlet var floorButtons: UIStackView!
     @IBOutlet var firstFloorButton: UIButton!
     @IBOutlet var secondFloorButton: UIButton!
+    var graph: Building!
     var pathView: PathView!
     var pathViewIsAdded: Bool = false
+    var path: [Node] = []
     
     @IBAction func tapFirstFloorButton(_ sender: UIButton) {
         setBackground(color1: #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1), color2: #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1), for: firstFloorButton, and: secondFloorButton)
         mapView.image = #imageLiteral(resourceName: "floor1")
         pathView.frame = mapView.bounds
+        pathView.currentFloorNumber = 0
     }
     
     @IBAction func tapSecondFloorButton(_ sender: UIButton) {
         setBackground(color1: #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1), color2: #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1), for: firstFloorButton, and: secondFloorButton)
         mapView.image = #imageLiteral(resourceName: "floor2")
         pathView.frame = mapView.bounds
+        pathView.currentFloorNumber = 1
     }
     
     override func viewDidLoad() {
@@ -40,31 +44,37 @@ class MapVC: UIViewController, UIScrollViewDelegate {
         setupFloorButtons()
         firstFloorButton.backgroundColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
         
-        findPath(between: 16, and: 4)
+        graph = createBuildingGraph()
+        if let tmpBuilding = graph {
+            //сделать из графа один большой массив [Node]
+            let nodes: [Node] = tmpBuilding.floors.compactMap({$0.nodes}).reduce([], +)
+            path = findPath(in: nodes, from: 18, to: 13)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         scrollViewDidZoom(scrollView)
-
+        
         pathView = PathView(frame: mapView.bounds)
-        pathView.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
         if pathViewIsAdded == false {
+            pathView.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
+            pathView.allPathNodes = path
+            pathView.currentFloorNumber = 0
             mapView.addSubview(pathView)
             pathViewIsAdded = true
         }
-        pathView.setNeedsDisplay()
     }
     
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return mapView
     }
-
+    
     func setBackground(color1: UIColor, color2: UIColor, for button1: UIButton, and button2: UIButton) {
         button1.backgroundColor = color1
         button2.backgroundColor = color2
     }
-
+    
     func setupFloorButtons() {
         firstFloorButton.layer.masksToBounds = true
         firstFloorButton.layer.cornerRadius = 5
@@ -76,7 +86,7 @@ class MapVC: UIViewController, UIScrollViewDelegate {
         secondFloorButton.layer.borderColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
         setBackground(color1: #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1), color2: #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1), for: firstFloorButton, and: secondFloorButton)
     }
-
+    
     func scrollViewDidZoom(_ scrollView: UIScrollView) {
         let imageViewSize = mapView.frame.size
         let scrollViewSize = scrollView.bounds.size
