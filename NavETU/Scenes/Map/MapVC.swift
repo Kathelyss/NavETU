@@ -14,24 +14,28 @@ class MapVC: UIViewController, UIScrollViewDelegate {
     @IBOutlet var floorButtons: UIStackView!
     @IBOutlet var firstFloorButton: UIButton!
     @IBOutlet var secondFloorButton: UIButton!
-    
-    @IBOutlet var fromTextField: UITextField!
-    @IBOutlet var toTextField: UITextField!
-    @IBAction func tapGoButton(_ sender: UIButton) {
-        if let from = fromTextField.text, from != "", let to = toTextField.text, to != "" {
-            dataSource.path = dataSource.findPath(in: dataSource.allNodes, from: Int(from)! - 1, to: Int(to)! - 1)
-            pathView.allPathNodes = dataSource.path
-            if let floor = dataSource.path.first?.floor {
-                setSourceNodeFloor(sourceNodeFloor: floor)
-            }
-            hideKeyboard()
-        }
-    }
+    @IBOutlet var searchButton: UIButton!    
     
     var pathView: PathView!
     var pathViewIsAdded: Bool = false
     
     let dataSource = MapDataSource()
+    
+    @IBAction func unwindToMapVC(segue: UIStoryboardSegue) {
+        if let vc = segue.source as? ModalSearchVC {
+            if let fromText = vc.fromTextField.text, let from = Int(fromText),
+                let toText = vc.toTextField.text, let to = Int(toText) {
+//                guard from > 0, from <= dataSource.allNodes.count, to > 0, to <= dataSource.allNodes.count else
+//                { return }
+                
+                dataSource.path = dataSource.findPath(in: dataSource.allNodes, from: fromText, to: toText)
+                pathView.allPathNodes = dataSource.path
+                if let floor = dataSource.path.first?.floor {
+                    setSourceNodeFloor(sourceNodeFloor: floor)
+                }
+            }
+        }
+    }
     
     @IBAction func tapFirstFloorButton(_ sender: UIButton) {
         setButtonBackgrounds(pressed: firstFloorButton, notPressed: secondFloorButton)
@@ -51,6 +55,7 @@ class MapVC: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         title = "Map.title".localized
         mapView.image = dataSource.mapImages[0]
+        setButtonBackgrounds(pressed: firstFloorButton, notPressed: secondFloorButton)
         setupScrollView()
     }
     
@@ -64,18 +69,11 @@ class MapVC: UIViewController, UIScrollViewDelegate {
             mapView.addSubview(pathView)
             pathViewIsAdded = true
             
-            let tapGesture = UIGestureRecognizer(target: self, action: #selector(hideKeyboard))
-            scrollView.addGestureRecognizer(tapGesture)
             pathView.allPathNodes = dataSource.path
             if let floor = dataSource.path.first?.floor {
                 setSourceNodeFloor(sourceNodeFloor: floor)
             }
         }
-    }
-    
-    @objc
-    func hideKeyboard() {
-        scrollView.endEditing(true)
     }
     
     func setSourceNodeFloor(sourceNodeFloor: Int) {

@@ -13,7 +13,7 @@ class ViewController: UIViewController, Routable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Next VC"
+        title = "Next VC".localized
     }
     
     override func didReceiveMemoryWarning() {

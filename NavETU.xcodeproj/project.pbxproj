@@ -17,6 +17,7 @@
 		94406CD21F6FB71900A67656 /* SearchCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94406CD11F6FB71900A67656 /* SearchCellBuilder.swift */; };
 		94406CD41F6FB76600A67656 /* MapDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94406CD31F6FB76600A67656 /* MapDataSource.swift */; };
 		94406CD71F6FB8F300A67656 /* XIBInitableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94406CD61F6FB8F300A67656 /* XIBInitableCell.swift */; };
+		945D9F3320B1FCA7006E9E16 /* ModalSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945D9F3120B1FCA7006E9E16 /* ModalSearchVC.swift */; };
 		9460FACB20A856AB00D63C2C /* FacultyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9460FAC920A856AB00D63C2C /* FacultyCell.swift */; };
 		9460FACC20A856AB00D63C2C /* FacultyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9460FACA20A856AB00D63C2C /* FacultyCell.xib */; };
 		9460FAD020A8685000D63C2C /* GraphUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9460FACF20A8685000D63C2C /* GraphUnits.swift */; };
@@ -68,6 +69,7 @@
 		94406CD11F6FB71900A67656 /* SearchCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCellBuilder.swift; sourceTree = "<group>"; };
 		94406CD31F6FB76600A67656 /* MapDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDataSource.swift; sourceTree = "<group>"; };
 		94406CD61F6FB8F300A67656 /* XIBInitableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XIBInitableCell.swift; sourceTree = "<group>"; };
+		945D9F3120B1FCA7006E9E16 /* ModalSearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalSearchVC.swift; sourceTree = "<group>"; };
 		9460FAC920A856AB00D63C2C /* FacultyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacultyCell.swift; sourceTree = "<group>"; };
 		9460FACA20A856AB00D63C2C /* FacultyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FacultyCell.xib; sourceTree = "<group>"; };
 		9460FACF20A8685000D63C2C /* GraphUnits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphUnits.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				9489C0EC1F6F065A0011E5AE /* MapVC.swift */,
 				94406CD31F6FB76600A67656 /* MapDataSource.swift */,
 				94E1540A20AF20A9009533B7 /* PathView.swift */,
+				945D9F3120B1FCA7006E9E16 /* ModalSearchVC.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 				9489C0ED1F6F065A0011E5AE /* MapVC.swift in Sources */,
 				9489C0E51F6F05BA0011E5AE /* Routable.swift in Sources */,
 				94DD7D7F1F6F0C210079E7B1 /* Services.swift in Sources */,
+				945D9F3320B1FCA7006E9E16 /* ModalSearchVC.swift in Sources */,
 				9489C0BF1F6F000E0011E5AE /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
