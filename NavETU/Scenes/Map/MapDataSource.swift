@@ -24,7 +24,6 @@ class MapDataSource {
     init() {
         buildingGraph = createBuildingGraph()
         allNodes = Array(buildingGraph.floors.compactMap({$0.nodes}).joined())
-        //path = findPath(in: allNodes, from: 0, to: 0)
     }
     
     func createBuildingGraph() -> Building {
@@ -90,12 +89,10 @@ class MapDataSource {
             let cheapestPathInFrontier = frontier.removeFirst()
             guard !visitedNodes.contains(cheapestPathInFrontier.node) else { continue }
             visitedNodes.insert(cheapestPathInFrontier.node)
-            //guard cheapestPathInFrontier.node.isVisited == false else { continue }
             
             if cheapestPathInFrontier.node === destination {
                 return cheapestPathInFrontier
             }
-//            cheapestPathInFrontier.node.isVisited = true
             for connection in cheapestPathInFrontier.node.edges where !visitedNodes.contains(connection.secondNode) {
                 frontier.append(Path(to: connection.secondNode, via: connection, previousPath: cheapestPathInFrontier))
             }

@@ -79,7 +79,6 @@ class MapVC: UIViewController, UIScrollViewDelegate {
     }
     
     func setSourceNodeFloor(sourceNodeFloor: Int) {
-        //        let sourceNodeFloor = dataSource.path[0].floor
         pathView.currentFloorNumber = sourceNodeFloor
         mapView.image = dataSource.mapImages[sourceNodeFloor]
         sourceNodeFloor == 0
