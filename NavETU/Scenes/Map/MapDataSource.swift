@@ -9,16 +9,22 @@
 import Foundation
 import UIKit
 
+struct SearchFields {
+    var sourceNodeIndex: Int
+    var destinationNodeIndex: Int
+}
+
 class MapDataSource {
     let mapImages: [UIImage] = [#imageLiteral(resourceName: "floor1"), #imageLiteral(resourceName: "floor2")]
     var buildingGraph: Building!
     var allNodes: [Node] = []
     var path: [Node] = []
+//    var search: SearchFields = SearchFields(sourceNodeIndex: 1, destinationNodeIndex: 1)
     
     init() {
         buildingGraph = createBuildingGraph()
-        allNodes = buildingGraph.floors.compactMap({$0.nodes}).reduce([], +)
-        path = findPath(in: allNodes, from: 2, to: 5)
+        allNodes = Array(buildingGraph.floors.compactMap({$0.nodes}).joined())
+        //path = findPath(in: allNodes, from: 0, to: 0)
     }
     
     func createBuildingGraph() -> Building {
@@ -73,6 +79,7 @@ class MapDataSource {
     }
     
     func dijkstraAlgorithm(from source: Node, to destination: Node) -> Path? {
+        var visitedNodes: Set<Node> = []
         var frontier: [Path] = [] {
             didSet {
                 frontier.sort { return $0.totalLength < $1.totalLength } // the frontier has to be always ordered
@@ -81,13 +88,15 @@ class MapDataSource {
         frontier.append(Path(to: source)) // the frontier = path that starts nowhere and ends in the source
         while !frontier.isEmpty {
             let cheapestPathInFrontier = frontier.removeFirst()
-            guard cheapestPathInFrontier.node.isVisited == false else { continue }
+            guard !visitedNodes.contains(cheapestPathInFrontier.node) else { continue }
+            visitedNodes.insert(cheapestPathInFrontier.node)
+            //guard cheapestPathInFrontier.node.isVisited == false else { continue }
             
             if cheapestPathInFrontier.node === destination {
                 return cheapestPathInFrontier
             }
-            cheapestPathInFrontier.node.isVisited = true
-            for connection in cheapestPathInFrontier.node.edges where !connection.secondNode.isVisited {
+//            cheapestPathInFrontier.node.isVisited = true
+            for connection in cheapestPathInFrontier.node.edges where !visitedNodes.contains(connection.secondNode) {
                 frontier.append(Path(to: connection.secondNode, via: connection, previousPath: cheapestPathInFrontier))
             }
         }
@@ -95,7 +104,7 @@ class MapDataSource {
     }
     
     func findPath(in building: [Node], from sourceNodeNumber: Int, to destinationNodeNumber: Int) -> [Node] {
-        let path = dijkstraAlgorithm(from: building[sourceNodeNumber - 1], to: building[destinationNodeNumber - 1])
+        let path = dijkstraAlgorithm(from: building[sourceNodeNumber], to: building[destinationNodeNumber])
         if let path = path {
             let pathNodeNamesArray: [String] = path.nodes.reversed().compactMap({$0}).map({$0.name})
             let resultString = pathNodeNamesArray.reduce("") { $0 + " ➝ " + $1 }

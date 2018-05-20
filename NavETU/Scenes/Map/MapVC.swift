@@ -15,6 +15,19 @@ class MapVC: UIViewController, UIScrollViewDelegate {
     @IBOutlet var firstFloorButton: UIButton!
     @IBOutlet var secondFloorButton: UIButton!
     
+    @IBOutlet var fromTextField: UITextField!
+    @IBOutlet var toTextField: UITextField!
+    @IBAction func tapGoButton(_ sender: UIButton) {
+        if let from = fromTextField.text, from != "", let to = toTextField.text, to != "" {
+            dataSource.path = dataSource.findPath(in: dataSource.allNodes, from: Int(from)! - 1, to: Int(to)! - 1)
+            pathView.allPathNodes = dataSource.path
+            if let floor = dataSource.path.first?.floor {
+                setSourceNodeFloor(sourceNodeFloor: floor)
+            }
+            hideKeyboard()
+        }
+    }
+    
     var pathView: PathView!
     var pathViewIsAdded: Bool = false
     
@@ -51,15 +64,27 @@ class MapVC: UIViewController, UIScrollViewDelegate {
             mapView.addSubview(pathView)
             pathViewIsAdded = true
             
+            let tapGesture = UIGestureRecognizer(target: self, action: #selector(hideKeyboard))
+            scrollView.addGestureRecognizer(tapGesture)
             pathView.allPathNodes = dataSource.path
-            //для корректного отображения этажа, на кот. расположена sourceNode при 1 заходе
-            let sourceNodeFloor = dataSource.path[0].floor
-            pathView.currentFloorNumber = sourceNodeFloor
-            mapView.image = dataSource.mapImages[sourceNodeFloor]
-            sourceNodeFloor == 0
-                ? setButtonBackgrounds(pressed: firstFloorButton, notPressed: secondFloorButton)
-                : setButtonBackgrounds(pressed: secondFloorButton, notPressed: firstFloorButton)
+            if let floor = dataSource.path.first?.floor {
+                setSourceNodeFloor(sourceNodeFloor: floor)
+            }
         }
+    }
+    
+    @objc
+    func hideKeyboard() {
+        scrollView.endEditing(true)
+    }
+    
+    func setSourceNodeFloor(sourceNodeFloor: Int) {
+        //        let sourceNodeFloor = dataSource.path[0].floor
+        pathView.currentFloorNumber = sourceNodeFloor
+        mapView.image = dataSource.mapImages[sourceNodeFloor]
+        sourceNodeFloor == 0
+            ? setButtonBackgrounds(pressed: firstFloorButton, notPressed: secondFloorButton)
+            : setButtonBackgrounds(pressed: secondFloorButton, notPressed: firstFloorButton)
     }
     
     func setupScrollView() {
@@ -71,7 +96,7 @@ class MapVC: UIViewController, UIScrollViewDelegate {
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return mapView
     }
-
+    
     func setButtonBackgrounds(pressed: UIButton, notPressed: UIButton) {
         pressed.backgroundColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
         notPressed.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
