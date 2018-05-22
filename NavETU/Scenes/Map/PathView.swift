@@ -36,20 +36,38 @@ class PathView: UIView {
             return
         }
         
-        let lineWidth = CGFloat(20)
+        let lineWidth = CGFloat(15)
         context.setLineWidth(lineWidth)
         let xMultiplier = rect.size.width / Constant.cellCount
         let yMultiplier = rect.size.height / Constant.cellCount
-        let startingPoint = CGPoint(x: (nodes[0].coordinates.x) * xMultiplier + lineWidth / 2,
+        let startPoint = CGPoint(x: (nodes[0].coordinates.x) * xMultiplier + lineWidth / 2,
                                     y: rect.size.height - (nodes[0].coordinates.y) * yMultiplier - lineWidth / 2)
-        context.move(to: startingPoint)
+        context.move(to: startPoint)
+        drawStartCircle(centerPoint: startPoint)
         var nextPoint = CGPoint(x: 0, y: 0)
         for i in 1..<nodes.count {
             nextPoint = CGPoint(x: (nodes[i].coordinates.x) * xMultiplier + lineWidth / 2,
                                 y: rect.size.height - (nodes[i].coordinates.y) * yMultiplier - lineWidth / 2)
             context.addLine(to: nextPoint)
         }
-        context.setStrokeColor(#colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1))
+        context.setStrokeColor(#colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1))
         context.strokePath()
     }
+    
+    func drawStartCircle(centerPoint: CGPoint) {
+        let circlePath = UIBezierPath(arcCenter: centerPoint,
+                                      radius: 25,
+                                      startAngle: CGFloat(0),
+                                      endAngle: CGFloat(Double.pi * 2),
+                                      clockwise: true)
+        
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.path = circlePath.cgPath
+        shapeLayer.fillColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
+        shapeLayer.strokeColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+        shapeLayer.lineWidth = 5.0
+        
+        self.layer.addSublayer(shapeLayer)
+    }
 }
+
