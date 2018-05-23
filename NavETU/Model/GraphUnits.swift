@@ -14,10 +14,6 @@ struct Point {
     let y: CGFloat
 }
 
-enum NodeType {
-    case exit, auditorium, link, stairs
-}
-
 class Node: Hashable {
     var hashValue: Int
     
@@ -25,15 +21,12 @@ class Node: Hashable {
         return lhs.name == rhs.name
     }
     
-    let type: NodeType
     let name: String
     let coordinates: Point
     public let floor: Int
-//    var isVisited: Bool = false
     var edges: [Edge] = []
     
-    init(type: NodeType, name: String, coordinates: Point, floor: Int) {
-        self.type = type
+    init(name: String, coordinates: Point, floor: Int) {
         self.name = name
         self.coordinates = coordinates
         self.floor = floor

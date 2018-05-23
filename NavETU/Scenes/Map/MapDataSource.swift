@@ -19,7 +19,6 @@ class MapDataSource {
     var buildingGraph: Building!
     var allNodes: [Node] = []
     var path: [Node] = []
-//    var search: SearchFields = SearchFields(sourceNodeIndex: 1, destinationNodeIndex: 1)
     
     init() {
         buildingGraph = createBuildingGraph()
@@ -27,27 +26,27 @@ class MapDataSource {
     }
     
     func createBuildingGraph() -> Building {
-        let node0 = Node(type: .exit, name: "0", coordinates: Point(x: 11, y: 0), floor: 0)
-        let node1 = Node(type: .auditorium, name: "1", coordinates: Point(x: 4, y: 13), floor: 0)
-        let node2 = Node(type: .auditorium, name: "2", coordinates: Point(x: 20, y: 13), floor: 0)
-        let node3 = Node(type: .auditorium, name: "3", coordinates: Point(x: 4, y: 7), floor: 0)
-        let node4 = Node(type: .auditorium, name: "4", coordinates: Point(x: 17, y: 7), floor: 0)
-        let node5 = Node(type: .auditorium, name: "5", coordinates: Point(x: 6, y: 13), floor: 1)
-        let node6 = Node(type: .auditorium, name: "6", coordinates: Point(x: 19, y: 13), floor: 1)
-        let node7 = Node(type: .auditorium, name: "7", coordinates: Point(x: 6, y: 9), floor: 1)
-        let node8 = Node(type: .auditorium, name: "8", coordinates: Point(x: 6, y: 4), floor: 1)
-        let node9 = Node(type: .auditorium, name: "9", coordinates: Point(x: 10, y: 4), floor: 1)
-        let node10 = Node(type: .auditorium, name: "10", coordinates: Point(x: 15, y: 4), floor: 1)
-        let node11 = Node(type: .link, name: "11", coordinates: Point(x: 4, y: 10), floor: 0)
-        let node12 = Node(type: .link, name: "12", coordinates: Point(x: 11, y: 10), floor: 0)
-        let node13 = Node(type: .link, name: "13", coordinates: Point(x: 13, y: 10), floor: 0)
-        let node14 = Node(type: .link, name: "14", coordinates: Point(x: 17, y: 10), floor: 0)
-        let node15 = Node(type: .link, name: "15", coordinates: Point(x: 20, y: 10), floor: 0)
-        let node16 = Node(type: .stairs, name: "16📶", coordinates: Point(x: 13, y: 19), floor: 0)
-        let node17 = Node(type: .stairs, name: "17📶", coordinates: Point(x: 10, y: 19), floor: 1)
-        let node18 = Node(type: .link, name: "18", coordinates: Point(x: 10, y: 9), floor: 1)
-        let node19 = Node(type: .link, name: "19", coordinates: Point(x: 15, y: 9), floor: 1)
-        let node20 = Node(type: .link, name: "20", coordinates: Point(x: 19, y: 9), floor: 1)
+        let node0 = Node(name: "0", coordinates: Point(x: 11, y: 0), floor: 0)
+        let node1 = Node(name: "1", coordinates: Point(x: 4, y: 13), floor: 0)
+        let node2 = Node(name: "2", coordinates: Point(x: 20, y: 13), floor: 0)
+        let node3 = Node(name: "3", coordinates: Point(x: 4, y: 7), floor: 0)
+        let node4 = Node(name: "4", coordinates: Point(x: 17, y: 7), floor: 0)
+        let node5 = Node(name: "5", coordinates: Point(x: 6, y: 13), floor: 1)
+        let node6 = Node(name: "6", coordinates: Point(x: 19, y: 13), floor: 1)
+        let node7 = Node(name: "7", coordinates: Point(x: 6, y: 9), floor: 1)
+        let node8 = Node(name: "8", coordinates: Point(x: 6, y: 4), floor: 1)
+        let node9 = Node(name: "9", coordinates: Point(x: 10, y: 4), floor: 1)
+        let node10 = Node(name: "10", coordinates: Point(x: 15, y: 4), floor: 1)
+        let node11 = Node(name: "11", coordinates: Point(x: 4, y: 10), floor: 0)
+        let node12 = Node(name: "12", coordinates: Point(x: 11, y: 10), floor: 0)
+        let node13 = Node(name: "13", coordinates: Point(x: 13, y: 10), floor: 0)
+        let node14 = Node(name: "14", coordinates: Point(x: 17, y: 10), floor: 0)
+        let node15 = Node(name: "15", coordinates: Point(x: 20, y: 10), floor: 0)
+        let node16 = Node(name: "16📶", coordinates: Point(x: 13, y: 19), floor: 0)
+        let node17 = Node(name: "17📶", coordinates: Point(x: 10, y: 19), floor: 1)
+        let node18 = Node(name: "18", coordinates: Point(x: 10, y: 9), floor: 1)
+        let node19 = Node(name: "19", coordinates: Point(x: 15, y: 9), floor: 1)
+        let node20 = Node(name: "20", coordinates: Point(x: 19, y: 9), floor: 1)
         
         node0.connectTo(node: node12, edgeLength: 10, edgeWeight: 1)
         node1.connectTo(node: node11, edgeLength: 3, edgeWeight: 1)
