@@ -29,8 +29,8 @@ class MapVC: UIViewController, UIScrollViewDelegate {
         if let vc = segue.source as? ModalSearchVC {
             if let fromText = vc.fromTextField.text, let from = Int(fromText),
                 let toText = vc.toTextField.text, let to = Int(toText) {
-//                guard from > 0, from <= dataSource.allNodes.count, to > 0, to <= dataSource.allNodes.count else
-//                { return }
+                //                guard from > 0, from <= dataSource.allNodes.count, to > 0, to <= dataSource.allNodes.count else
+                //                { return }
                 
                 dataSource.path = dataSource.findPath(in: dataSource.allNodes, from: fromText, to: toText)
                 pathView.allPathNodes = dataSource.path
@@ -68,14 +68,14 @@ class MapVC: UIViewController, UIScrollViewDelegate {
         pathView.currentFloorNumber = 3
         mapView.image = dataSource.mapImages[pathView.currentFloorNumber]
     }
-
+    
     @IBAction func tapFifthFloorButton(_ sender: UIButton) {
         setButtonBackgroundsForButtons(pressedButtonIndex: 5)
         pathView.frame = mapView.bounds
         pathView.currentFloorNumber = 4
         mapView.image = dataSource.mapImages[pathView.currentFloorNumber]
     }
-
+    
     @IBAction func tapSixthFloorButton(_ sender: UIButton) {
         setButtonBackgroundsForButtons(pressedButtonIndex: 6)
         pathView.frame = mapView.bounds
@@ -111,9 +111,16 @@ class MapVC: UIViewController, UIScrollViewDelegate {
     func setSourceNodeFloor(sourceNodeFloor: Int) {
         pathView.currentFloorNumber = sourceNodeFloor
         mapView.image = dataSource.mapImages[sourceNodeFloor]
-        sourceNodeFloor == 0
-            ? setButtonBackgroundsForButtons(pressedButtonIndex: 1)
-            : setButtonBackgroundsForButtons(pressedButtonIndex: 2) //tmp
+        switch sourceNodeFloor {
+        case 0: setButtonBackgroundsForButtons(pressedButtonIndex: 1)
+        case 1: setButtonBackgroundsForButtons(pressedButtonIndex: 2)
+        case 2: setButtonBackgroundsForButtons(pressedButtonIndex: 3)
+        case 3: setButtonBackgroundsForButtons(pressedButtonIndex: 4)
+        case 4: setButtonBackgroundsForButtons(pressedButtonIndex: 5)
+        case 5: setButtonBackgroundsForButtons(pressedButtonIndex: 6)
+        default:
+            setButtonBackgroundsForButtons(pressedButtonIndex: 1)
+        }
     }
     
     func setupScrollView() {
