@@ -154,7 +154,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Wjh-x8-bG4">
-                                <rect key="frame" x="327" y="80" width="40" height="88"/>
+                                <rect key="frame" x="327" y="80" width="40" height="280"/>
                                 <subviews>
                                     <button opaque="NO" clipsSubviews="YES" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4MA-Wu-eyj">
                                         <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
@@ -197,7 +197,93 @@
                                             <action selector="tapSecondFloorButton:" destination="577-N1-m2d" eventType="touchUpInside" id="eed-sM-B88"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" clipsSubviews="YES" alpha="0.80000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CEl-vW-OLA">
+                                        <rect key="frame" x="0.0" y="96" width="40" height="40"/>
+                                        <color key="backgroundColor" red="0.80392156859999997" green="0.80392156859999997" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="CEl-vW-OLA" secondAttribute="height" multiplier="1:1" id="eDn-bf-jCt"/>
+                                            <constraint firstAttribute="height" constant="40" id="mpr-lh-EWZ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="3">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleShadowColor" red="0.81176470590000005" green="0.81176470590000005" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="tapThirdFloorButton:" destination="577-N1-m2d" eventType="touchUpInside" id="GKP-H3-tQX"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" clipsSubviews="YES" alpha="0.80000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GwO-In-tc0">
+                                        <rect key="frame" x="0.0" y="144" width="40" height="40"/>
+                                        <color key="backgroundColor" red="0.80392156859999997" green="0.80392156859999997" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Cm7-r1-gRR"/>
+                                            <constraint firstAttribute="width" secondItem="GwO-In-tc0" secondAttribute="height" multiplier="1:1" id="Fth-eT-fam"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="4">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleShadowColor" red="0.81176470590000005" green="0.81176470590000005" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="tapFourthFloorButton:" destination="577-N1-m2d" eventType="touchUpInside" id="1yO-jM-FzD"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" clipsSubviews="YES" alpha="0.80000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p3a-ER-p5V">
+                                        <rect key="frame" x="0.0" y="192" width="40" height="40"/>
+                                        <color key="backgroundColor" red="0.80392156859999997" green="0.80392156859999997" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="kFM-bL-T7e"/>
+                                            <constraint firstAttribute="width" secondItem="p3a-ER-p5V" secondAttribute="height" multiplier="1:1" id="suK-jV-AxQ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="5">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleShadowColor" red="0.81176470590000005" green="0.81176470590000005" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="tapFifthFloorButton:" destination="577-N1-m2d" eventType="touchUpInside" id="awZ-2r-UsV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" clipsSubviews="YES" alpha="0.80000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NS0-K9-qd4">
+                                        <rect key="frame" x="0.0" y="240" width="40" height="40"/>
+                                        <color key="backgroundColor" red="0.80392156859999997" green="0.80392156859999997" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="2s4-0n-vhZ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="6">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleShadowColor" red="0.81176470590000005" green="0.81176470590000005" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="tapSixthFloorButton:" destination="577-N1-m2d" eventType="touchUpInside" id="xcT-Bp-fOJ"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="NS0-K9-qd4" firstAttribute="width" secondItem="NS0-K9-qd4" secondAttribute="height" multiplier="1:1" id="xQc-w2-a1q"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -215,12 +301,16 @@
                     </view>
                     <navigationItem key="navigationItem" id="3Xk-NF-Wav"/>
                     <connections>
+                        <outlet property="fifthFloorButton" destination="p3a-ER-p5V" id="oWF-3G-FXA"/>
                         <outlet property="firstFloorButton" destination="4MA-Wu-eyj" id="5YK-YD-JdN"/>
                         <outlet property="floorButtons" destination="Wjh-x8-bG4" id="qRW-dq-sLW"/>
+                        <outlet property="fourthFloorButton" destination="GwO-In-tc0" id="PqV-RU-bTg"/>
                         <outlet property="mapView" destination="itV-ZJ-CZY" id="TCO-VZ-pVO"/>
                         <outlet property="scrollView" destination="X88-Aa-tGC" id="gB8-D2-3Zu"/>
                         <outlet property="searchButton" destination="DyX-sA-IOF" id="xif-Zl-84p"/>
                         <outlet property="secondFloorButton" destination="ugF-Ff-OXm" id="Qoe-zA-gdo"/>
+                        <outlet property="sixthFloorButton" destination="NS0-K9-qd4" id="rxa-Ei-qiD"/>
+                        <outlet property="thirdFloorButton" destination="CEl-vW-OLA" id="EhB-BK-fzZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9T2-IK-k36" userLabel="First Responder" sceneMemberID="firstResponder"/>

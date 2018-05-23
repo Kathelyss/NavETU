@@ -15,6 +15,10 @@ class MapVC: UIViewController, UIScrollViewDelegate {
     @IBOutlet var firstFloorButton: UIButton!
     @IBOutlet var secondFloorButton: UIButton!
     @IBOutlet var searchButton: UIButton!    
+    @IBOutlet var thirdFloorButton: UIButton!
+    @IBOutlet var fourthFloorButton: UIButton!
+    @IBOutlet var fifthFloorButton: UIButton!
+    @IBOutlet var sixthFloorButton: UIButton!
     
     var pathView: PathView!
     var pathViewIsAdded: Bool = false
@@ -38,16 +42,44 @@ class MapVC: UIViewController, UIScrollViewDelegate {
     }
     
     @IBAction func tapFirstFloorButton(_ sender: UIButton) {
-        setButtonBackgrounds(pressed: firstFloorButton, notPressed: secondFloorButton)
+        setButtonBackgroundsForButtons(pressedButtonIndex: 1)
         pathView.frame = mapView.bounds
         pathView.currentFloorNumber = 0
         mapView.image = dataSource.mapImages[pathView.currentFloorNumber]
     }
     
     @IBAction func tapSecondFloorButton(_ sender: UIButton) {
-        setButtonBackgrounds(pressed: secondFloorButton, notPressed: firstFloorButton)
+        setButtonBackgroundsForButtons(pressedButtonIndex: 2)
         pathView.frame = mapView.bounds
         pathView.currentFloorNumber = 1
+        mapView.image = dataSource.mapImages[pathView.currentFloorNumber]
+    }
+    
+    @IBAction func tapThirdFloorButton(_ sender: UIButton) {
+        setButtonBackgroundsForButtons(pressedButtonIndex: 3)
+        pathView.frame = mapView.bounds
+        pathView.currentFloorNumber = 2
+        mapView.image = dataSource.mapImages[pathView.currentFloorNumber]
+    }
+    
+    @IBAction func tapFourthFloorButton(_ sender: UIButton) {
+        setButtonBackgroundsForButtons(pressedButtonIndex: 4)
+        pathView.frame = mapView.bounds
+        pathView.currentFloorNumber = 3
+        mapView.image = dataSource.mapImages[pathView.currentFloorNumber]
+    }
+
+    @IBAction func tapFifthFloorButton(_ sender: UIButton) {
+        setButtonBackgroundsForButtons(pressedButtonIndex: 5)
+        pathView.frame = mapView.bounds
+        pathView.currentFloorNumber = 4
+        mapView.image = dataSource.mapImages[pathView.currentFloorNumber]
+    }
+
+    @IBAction func tapSixthFloorButton(_ sender: UIButton) {
+        setButtonBackgroundsForButtons(pressedButtonIndex: 6)
+        pathView.frame = mapView.bounds
+        pathView.currentFloorNumber = 5
         mapView.image = dataSource.mapImages[pathView.currentFloorNumber]
     }
     
@@ -55,7 +87,7 @@ class MapVC: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         title = "Map.title".localized
         mapView.image = dataSource.mapImages[0]
-        setButtonBackgrounds(pressed: firstFloorButton, notPressed: secondFloorButton)
+        setButtonBackgroundsForButtons(pressedButtonIndex: 1)
         setupScrollView()
     }
     
@@ -80,12 +112,12 @@ class MapVC: UIViewController, UIScrollViewDelegate {
         pathView.currentFloorNumber = sourceNodeFloor
         mapView.image = dataSource.mapImages[sourceNodeFloor]
         sourceNodeFloor == 0
-            ? setButtonBackgrounds(pressed: firstFloorButton, notPressed: secondFloorButton)
-            : setButtonBackgrounds(pressed: secondFloorButton, notPressed: firstFloorButton)
+            ? setButtonBackgroundsForButtons(pressedButtonIndex: 1)
+            : setButtonBackgroundsForButtons(pressedButtonIndex: 2) //tmp
     }
     
     func setupScrollView() {
-        scrollView.minimumZoomScale = 0.3
+        scrollView.minimumZoomScale = 0.18
         scrollView.zoomScale = scrollView.minimumZoomScale
         scrollView.contentSize = mapView.frame.size
     }
@@ -94,9 +126,13 @@ class MapVC: UIViewController, UIScrollViewDelegate {
         return mapView
     }
     
-    func setButtonBackgrounds(pressed: UIButton, notPressed: UIButton) {
-        pressed.backgroundColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
-        notPressed.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+    func setButtonBackgroundsForButtons(pressedButtonIndex: Int) {
+        var notPressed: [UIButton] = [firstFloorButton, secondFloorButton, thirdFloorButton,
+                                      fourthFloorButton, fifthFloorButton, sixthFloorButton]
+        for button in notPressed {
+            button.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        }
+        notPressed[pressedButtonIndex - 1].backgroundColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
     }
     
     func scrollViewDidZoom(_ scrollView: UIScrollView) {

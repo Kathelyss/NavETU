@@ -15,7 +15,7 @@ struct SearchFields {
 }
 
 class MapDataSource {
-    let mapImages: [UIImage] = [#imageLiteral(resourceName: "floor1"), #imageLiteral(resourceName: "floor2")]
+    let mapImages: [UIImage] = [#imageLiteral(resourceName: "floor1"), #imageLiteral(resourceName: "floor2"), #imageLiteral(resourceName: "floor3"), #imageLiteral(resourceName: "floor4"), #imageLiteral(resourceName: "floor5"), #imageLiteral(resourceName: "floor6")]
     var buildingGraph: Building!
     var allNodes: [Node] = []
     var path: [Node] = []
