@@ -122,6 +122,25 @@
                                             <constraint firstAttribute="height" priority="250" constant="128" id="fPz-bh-9EX"/>
                                         </constraints>
                                     </imageView>
+                                    <button opaque="NO" clipsSubviews="YES" alpha="0.80000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dKn-9Y-LPp">
+                                        <rect key="frame" x="16" y="64" width="40" height="40"/>
+                                        <color key="backgroundColor" red="0.80392156859999997" green="0.80392156859999997" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Lsf-du-tx9"/>
+                                            <constraint firstAttribute="width" secondItem="dKn-9Y-LPp" secondAttribute="height" multiplier="1:1" id="aHZ-XO-m1l"/>
+                                        </constraints>
+                                        <state key="normal" image="crossIcon">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="tapClearRouteButton:" destination="577-N1-m2d" eventType="touchUpInside" id="D6g-cx-4gW"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -173,7 +192,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="tapFirstFloorButton:" destination="577-N1-m2d" eventType="touchUpInside" id="PF5-3k-QP6"/>
+                                            <action selector="tapFloorButton:" destination="577-N1-m2d" eventType="touchUpInside" id="ysa-9q-rYq"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" clipsSubviews="YES" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ugF-Ff-OXm">
@@ -194,7 +213,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="tapSecondFloorButton:" destination="577-N1-m2d" eventType="touchUpInside" id="eed-sM-B88"/>
+                                            <action selector="tapFloorButton:" destination="577-N1-m2d" eventType="touchUpInside" id="7uI-30-zgz"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" clipsSubviews="YES" alpha="0.80000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CEl-vW-OLA">
@@ -215,7 +234,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="tapThirdFloorButton:" destination="577-N1-m2d" eventType="touchUpInside" id="GKP-H3-tQX"/>
+                                            <action selector="tapFloorButton:" destination="577-N1-m2d" eventType="touchUpInside" id="4cE-4B-ICv"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -224,10 +243,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="X88-Aa-tGC" firstAttribute="top" secondItem="U8D-2P-Ecp" secondAttribute="top" id="Crp-Zb-uN2"/>
+                            <constraint firstItem="dKn-9Y-LPp" firstAttribute="top" secondItem="DyX-sA-IOF" secondAttribute="bottom" constant="8" id="QS4-Y8-dwn"/>
                             <constraint firstItem="DyX-sA-IOF" firstAttribute="top" secondItem="U8D-2P-Ecp" secondAttribute="top" constant="16" id="RoB-Hb-1F1"/>
                             <constraint firstItem="U8D-2P-Ecp" firstAttribute="bottom" secondItem="X88-Aa-tGC" secondAttribute="bottom" id="d9G-Sb-N43"/>
                             <constraint firstItem="Wjh-x8-bG4" firstAttribute="top" secondItem="U8D-2P-Ecp" secondAttribute="top" constant="16" id="iJj-AO-NHC"/>
                             <constraint firstItem="U8D-2P-Ecp" firstAttribute="trailing" secondItem="X88-Aa-tGC" secondAttribute="trailing" id="j9N-sP-iFv"/>
+                            <constraint firstItem="dKn-9Y-LPp" firstAttribute="leading" secondItem="DyX-sA-IOF" secondAttribute="leading" id="nBw-O8-Kbk"/>
+                            <constraint firstItem="dKn-9Y-LPp" firstAttribute="trailing" secondItem="DyX-sA-IOF" secondAttribute="trailing" id="pSM-Ym-8uj"/>
                             <constraint firstItem="U8D-2P-Ecp" firstAttribute="trailing" secondItem="Wjh-x8-bG4" secondAttribute="trailing" constant="8" id="qCe-fo-TAv"/>
                             <constraint firstItem="DyX-sA-IOF" firstAttribute="leading" secondItem="U8D-2P-Ecp" secondAttribute="leading" constant="16" id="rky-3T-46R"/>
                             <constraint firstItem="X88-Aa-tGC" firstAttribute="leading" secondItem="U8D-2P-Ecp" secondAttribute="leading" id="yNu-aa-zFp"/>
@@ -236,6 +258,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="3Xk-NF-Wav"/>
                     <connections>
+                        <outlet property="clearRouteButton" destination="dKn-9Y-LPp" id="70L-45-q0p"/>
                         <outlet property="firstFloorButton" destination="4MA-Wu-eyj" id="5YK-YD-JdN"/>
                         <outlet property="floorButtons" destination="Wjh-x8-bG4" id="qRW-dq-sLW"/>
                         <outlet property="mapView" destination="itV-ZJ-CZY" id="TCO-VZ-pVO"/>
@@ -717,6 +740,7 @@
     </scenes>
     <resources>
         <image name="cafe" width="2400" height="2400"/>
+        <image name="crossIcon" width="18" height="18"/>
         <image name="icon_home" width="25" height="25"/>
         <image name="icon_map" width="25" height="22"/>
         <image name="icon_search" width="512" height="512"/>

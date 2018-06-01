@@ -19,8 +19,6 @@ class MapDataSource {
     var buildingGraph: Building!
     var allNodes: [Node] = []
     var path: [Node] = []
-    var nodesFileProcessor = FileProcessor(fileName: "nodes.plist")
-    var edgesFileProcessor = FileProcessor(fileName: "edges.plist")
     
     init() {
         buildingGraph = createBuildingGraph()
