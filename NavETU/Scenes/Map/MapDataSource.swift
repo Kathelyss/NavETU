@@ -19,61 +19,53 @@ class MapDataSource {
     var buildingGraph: Building!
     var allNodes: [Node] = []
     var path: [Node] = []
+    var nodesFileProcessor = FileProcessor(fileName: "nodes.plist")
+    var edgesFileProcessor = FileProcessor(fileName: "edges.plist")
     
     init() {
         buildingGraph = createBuildingGraph()
         allNodes = Array(buildingGraph.floors.compactMap({$0.nodes}).joined())
     }
     
+    func parseNodes() throws -> [Node] {
+        let url = Bundle.main.url(forResource: "nodes", withExtension: "plist")!
+        let data = try Data(contentsOf: url)
+        let decoder = PropertyListDecoder()
+        return try decoder.decode([Node].self, from: data)
+    }
+    
+    func parseEdges() throws -> [EdgeSaver] {
+        let url = Bundle.main.url(forResource: "edges", withExtension: "plist")!
+        let data = try Data(contentsOf: url)
+        let decoder = PropertyListDecoder()
+        return try decoder.decode([EdgeSaver].self, from: data)
+    }
+    
     func createBuildingGraph() -> Building {
-        let node0 = Node(name: "0", coordinates: Point(x: 11, y: 0), floor: 0)
-        let node1 = Node(name: "1", coordinates: Point(x: 4, y: 13), floor: 0)
-        let node2 = Node(name: "2", coordinates: Point(x: 20, y: 13), floor: 0)
-        let node3 = Node(name: "3", coordinates: Point(x: 4, y: 7), floor: 0)
-        let node4 = Node(name: "4", coordinates: Point(x: 17, y: 7), floor: 0)
-        let node5 = Node(name: "5", coordinates: Point(x: 6, y: 13), floor: 1)
-        let node6 = Node(name: "6", coordinates: Point(x: 19, y: 13), floor: 1)
-        let node7 = Node(name: "7", coordinates: Point(x: 6, y: 9), floor: 1)
-        let node8 = Node(name: "8", coordinates: Point(x: 6, y: 4), floor: 1)
-        let node9 = Node(name: "9", coordinates: Point(x: 10, y: 4), floor: 1)
-        let node10 = Node(name: "10", coordinates: Point(x: 15, y: 4), floor: 1)
-        let node11 = Node(name: "11", coordinates: Point(x: 4, y: 10), floor: 0)
-        let node12 = Node(name: "12", coordinates: Point(x: 11, y: 10), floor: 0)
-        let node13 = Node(name: "13", coordinates: Point(x: 13, y: 10), floor: 0)
-        let node14 = Node(name: "14", coordinates: Point(x: 17, y: 10), floor: 0)
-        let node15 = Node(name: "15", coordinates: Point(x: 20, y: 10), floor: 0)
-        let node16 = Node(name: "16📶", coordinates: Point(x: 13, y: 19), floor: 0)
-        let node17 = Node(name: "17📶", coordinates: Point(x: 10, y: 19), floor: 1)
-        let node18 = Node(name: "18", coordinates: Point(x: 10, y: 9), floor: 1)
-        let node19 = Node(name: "19", coordinates: Point(x: 15, y: 9), floor: 1)
-        let node20 = Node(name: "20", coordinates: Point(x: 19, y: 9), floor: 1)
-        
-        node0.connectTo(node: node12, edgeLength: 10, edgeWeight: 1)
-        node1.connectTo(node: node11, edgeLength: 3, edgeWeight: 1)
-        node3.connectTo(node: node11, edgeLength: 3, edgeWeight: 1)
-        node11.connectTo(node: node12, edgeLength: 7, edgeWeight: 1)
-        node12.connectTo(node: node13, edgeLength: 2, edgeWeight: 1)
-        node13.connectTo(node: node14, edgeLength: 4, edgeWeight: 1)
-        node13.connectTo(node: node16, edgeLength: 9, edgeWeight: 1)
-        node14.connectTo(node: node4, edgeLength: 3, edgeWeight: 1)
-        node14.connectTo(node: node15, edgeLength: 3, edgeWeight: 1)
-        node15.connectTo(node: node2, edgeLength: 3, edgeWeight: 1)
-        node16.connectTo(node: node17, edgeLength: 3, edgeWeight: 1) //stairs
-        node17.connectTo(node: node18, edgeLength: 10, edgeWeight: 1)
-        node18.connectTo(node: node7, edgeLength: 4, edgeWeight: 1)
-        node18.connectTo(node: node9, edgeLength: 5, edgeWeight: 1)
-        node18.connectTo(node: node19, edgeLength: 5, edgeWeight: 1)
-        node7.connectTo(node: node5, edgeLength: 4, edgeWeight: 1)
-        node7.connectTo(node: node8, edgeLength: 5, edgeWeight: 1)
-        node19.connectTo(node: node10, edgeLength: 5, edgeWeight: 1)
-        node19.connectTo(node: node20, edgeLength: 4, edgeWeight: 1)
-        node20.connectTo(node: node6, edgeLength: 4, edgeWeight: 1)
-        
-        let floor1 = Floor(number: 1, nodes: [node0, node1, node2, node3, node4,
-                                              node11, node12, node13, node14, node15, node16])
-        let floor2 = Floor(number: 2, nodes: [node5, node6, node7, node8, node9,
-                                              node10, node17, node18, node19, node20])
-        return Building(floors: [floor1, floor2])
+        do {
+            let nodes = try parseNodes()
+            let edgeStrictures = try parseEdges()
+            for structure in edgeStrictures {
+                let firstNode = nodes.filter { $0.name == structure.firstNodeName }.first
+                let secondNode = nodes.filter { $0.name == structure.secondNodeName }.first
+                guard let first = firstNode, let second = secondNode else {
+                    print("Error!")
+                    return Building(floors: [])
+                }
+                
+                first.connectTo(node: second, edgeLength: structure.length, edgeWeight: structure.weight)
+            }
+            let floor1 = Floor(number: 1, nodes: nodes.filter { $0.floor == 1 })
+            let floor2 = Floor(number: 2, nodes: nodes.filter { $0.floor == 2 })
+            let floor3 = Floor(number: 3, nodes: nodes.filter { $0.floor == 3 })
+            let floor4 = Floor(number: 4, nodes: nodes.filter { $0.floor == 4 })
+            let floor5 = Floor(number: 5, nodes: nodes.filter { $0.floor == 5 })
+            let floor6 = Floor(number: 6, nodes: nodes.filter { $0.floor == 6 })
+            return Building(floors: [floor1, floor2, floor3, floor4, floor5, floor6])
+        } catch {
+            print("Error \(error). Couldn't create building")
+        }
+        return Building(floors: [])
     }
     
     func dijkstraAlgorithm(from source: Node, to destination: Node) -> Path? {

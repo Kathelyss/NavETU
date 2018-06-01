@@ -28,7 +28,7 @@ class Node: Hashable, Codable, CustomStringConvertible {
     let floor: Int
     var edges: [Edge] = []
     var description: String {
-        return "\(name) - (x: \(coordinates.x), y: \(coordinates.y)), этаж: \(floor), связи: \(edges.count)"
+        return "\(name) - (x: \(coordinates.x), y: \(coordinates.y)), этаж: \(floor)"
     }
     
     init(name: String, coordinates: Point, floor: Int) {
@@ -42,14 +42,16 @@ class Node: Hashable, Codable, CustomStringConvertible {
         node.edges.append(Edge(first: node, second: self, length: edgeLength, weight: edgeWeight))
     }
     
-    
 }
 
-class Edge: Codable {
+class Edge: Codable, CustomStringConvertible {
     let firstNode: Node
     let secondNode: Node
     let length: Int
     let weight: Int? //for stairs
+    var description: String {
+        return "\(firstNode.name) - > \(secondNode.name) = \(length)"
+    }
     
     init(first: Node, second: Node, length: Int, weight: Int?) {
         firstNode = first

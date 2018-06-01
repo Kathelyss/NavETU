@@ -37,6 +37,9 @@
 		9489C0ED1F6F065A0011E5AE /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9489C0EC1F6F065A0011E5AE /* MapVC.swift */; };
 		94D9824E20C14D6B00C73969 /* WcCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D9824C20C14D6B00C73969 /* WcCell.swift */; };
 		94D9824F20C14D6B00C73969 /* WcCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94D9824D20C14D6B00C73969 /* WcCell.xib */; };
+		94D9825120C1979300C73969 /* FileProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D9825020C1979300C73969 /* FileProcessor.swift */; };
+		94D9825320C1AC6B00C73969 /* nodes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94D9825220C1AC6B00C73969 /* nodes.plist */; };
+		94D9825520C1AC8200C73969 /* edges.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94D9825420C1AC8200C73969 /* edges.plist */; };
 		94DD7D7D1F6F078F0079E7B1 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DD7D7C1F6F078F0079E7B1 /* Router.swift */; };
 		94DD7D7F1F6F0C210079E7B1 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DD7D7E1F6F0C210079E7B1 /* Services.swift */; };
 		94DD7D891F6F0E680079E7B1 /* Home.strings in Resources */ = {isa = PBXBuildFile; fileRef = 94DD7D8B1F6F0E680079E7B1 /* Home.strings */; };
@@ -97,6 +100,9 @@
 		9489C0EC1F6F065A0011E5AE /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		94D9824C20C14D6B00C73969 /* WcCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WcCell.swift; sourceTree = "<group>"; };
 		94D9824D20C14D6B00C73969 /* WcCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WcCell.xib; sourceTree = "<group>"; };
+		94D9825020C1979300C73969 /* FileProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FileProcessor.swift; path = ../../../Noder/Noder/FileProcessor.swift; sourceTree = "<group>"; };
+		94D9825220C1AC6B00C73969 /* nodes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = nodes.plist; path = ../../../../../Library/Containers/ru.0w1.Noder/Data/Documents/nodes.plist; sourceTree = "<group>"; };
+		94D9825420C1AC8200C73969 /* edges.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = edges.plist; path = ../../../../../Library/Containers/ru.0w1.Noder/Data/Documents/edges.plist; sourceTree = "<group>"; };
 		94DD7D7C1F6F078F0079E7B1 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		94DD7D7E1F6F0C210079E7B1 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		94DD7D8C1F6F0E700079E7B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Home.strings; sourceTree = "<group>"; };
@@ -288,6 +294,9 @@
 		94E1540920ADEF21009533B7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				94D9825420C1AC8200C73969 /* edges.plist */,
+				94D9825220C1AC6B00C73969 /* nodes.plist */,
+				94D9825020C1979300C73969 /* FileProcessor.swift */,
 				9460FACF20A8685000D63C2C /* GraphUnits.swift */,
 			);
 			path = Model;
@@ -391,6 +400,8 @@
 				94DD7DA91F6FB2960079E7B1 /* HomeCell.xib in Resources */,
 				94DD7D9E1F6F0F680079E7B1 /* Map.strings in Resources */,
 				9489C0C71F6F000E0011E5AE /* LaunchScreen.storyboard in Resources */,
+				94D9825320C1AC6B00C73969 /* nodes.plist in Resources */,
+				94D9825520C1AC8200C73969 /* edges.plist in Resources */,
 				94DD7D891F6F0E680079E7B1 /* Home.strings in Resources */,
 				94D9824F20C14D6B00C73969 /* WcCell.xib in Resources */,
 				9489C0E21F6F04690011E5AE /* Assets.xcassets in Resources */,
@@ -421,6 +432,7 @@
 				9489C0EB1F6F064D0011E5AE /* SearchVC.swift in Sources */,
 				94DD7DA31F6F12660079E7B1 /* String.swift in Sources */,
 				94406CCA1F6FB67100A67656 /* MeCellModel.swift in Sources */,
+				94D9825120C1979300C73969 /* FileProcessor.swift in Sources */,
 				94FA69E51F6FE7EB009359A6 /* FacultiesVC.swift in Sources */,
 				94DD7DA81F6FB2960079E7B1 /* HomeCell.swift in Sources */,
 				94406CD21F6FB71900A67656 /* SearchCellBuilder.swift in Sources */,
