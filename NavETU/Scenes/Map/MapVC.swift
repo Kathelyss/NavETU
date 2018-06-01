@@ -37,20 +37,18 @@ class MapVC: UIViewController, UIScrollViewDelegate {
     }
     
     @IBAction func tapFloorButton(_ sender: UIButton) {
+        pathView.frame = mapView.bounds
+        mapView.image = dataSource.mapImages[pathView.currentFloorNumber]
         if sender.titleLabel?.text == "1" {
             setButtonBackgroundsForButtons(pressedButtonIndex: 1)
-            pathView.frame = mapView.bounds
             pathView.currentFloorNumber = 0
         } else if sender.titleLabel?.text == "2" {
             setButtonBackgroundsForButtons(pressedButtonIndex: 2)
-            pathView.frame = mapView.bounds
             pathView.currentFloorNumber = 1
         } else if sender.titleLabel?.text == "3" {
             setButtonBackgroundsForButtons(pressedButtonIndex: 3)
-            pathView.frame = mapView.bounds
             pathView.currentFloorNumber = 2
         }
-        mapView.image = dataSource.mapImages[pathView.currentFloorNumber]
         lastTappedButton = sender
     }
     
@@ -87,7 +85,6 @@ class MapVC: UIViewController, UIScrollViewDelegate {
             pathViewIsAdded = true
             
             pathView.allPathNodes = dataSource.path
-            clearRouteButton.isHidden = false
             if let floor = dataSource.path.first?.floor {
                 setSourceNodeFloor(sourceNodeFloor: floor - 1)
             }
@@ -122,6 +119,7 @@ class MapVC: UIViewController, UIScrollViewDelegate {
             button.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         }
         notPressed[pressedButtonIndex - 1].backgroundColor = #colorLiteral(red: 0, green: 0.1826862782, blue: 0.7505155457, alpha: 1)
+        lastTappedButton = notPressed[pressedButtonIndex - 1]
     }
     
     func scrollViewDidZoom(_ scrollView: UIScrollView) {
