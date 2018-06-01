@@ -27,11 +27,7 @@ class MapVC: UIViewController, UIScrollViewDelegate {
     
     @IBAction func unwindToMapVC(segue: UIStoryboardSegue) {
         if let vc = segue.source as? ModalSearchVC {
-            if let fromText = vc.fromTextField.text, let from = Int(fromText),
-                let toText = vc.toTextField.text, let to = Int(toText) {
-                //                guard from > 0, from <= dataSource.allNodes.count, to > 0, to <= dataSource.allNodes.count else
-                //                { return }
-                
+            if let fromText = vc.fromTextField.text, let toText = vc.toTextField.text {                
                 dataSource.path = dataSource.findPath(in: dataSource.allNodes, from: fromText, to: toText)
                 pathView.allPathNodes = dataSource.path
                 if let floor = dataSource.path.first?.floor {
