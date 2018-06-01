@@ -7,15 +7,17 @@
 //
 
 import Foundation
-import UIKit
+import CoreGraphics
 
-struct Point {
+struct Point: Codable {
     let x: CGFloat
     let y: CGFloat
 }
 
-class Node: Hashable {
-    var hashValue: Int
+class Node: Hashable, Codable, CustomStringConvertible {
+    var hashValue: Int {
+        return name.hashValue
+    }
     
     static func == (lhs: Node, rhs: Node) -> Bool {
         return lhs.name == rhs.name
@@ -23,23 +25,27 @@ class Node: Hashable {
     
     let name: String
     let coordinates: Point
-    public let floor: Int
+    let floor: Int
     var edges: [Edge] = []
+    var description: String {
+        return "\(name) - (x: \(coordinates.x), y: \(coordinates.y)), этаж: \(floor), связи: \(edges.count)"
+    }
     
     init(name: String, coordinates: Point, floor: Int) {
         self.name = name
         self.coordinates = coordinates
         self.floor = floor
-        hashValue = name.hashValue
     }
     
     func connectTo(node: Node, edgeLength: Int, edgeWeight: Int) {
         self.edges.append(Edge(first: self, second: node, length: edgeLength, weight: edgeWeight))
         node.edges.append(Edge(first: node, second: self, length: edgeLength, weight: edgeWeight))
     }
+    
+    
 }
 
-class Edge {
+class Edge: Codable {
     let firstNode: Node
     let secondNode: Node
     let length: Int

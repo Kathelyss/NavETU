@@ -1,6 +1,6 @@
 
-/* Class = "UITabBarItem"; title = "Map"; ObjectID = "515-Oy-NCJ"; */
-"515-Oy-NCJ.title" = "Map";
+/* Class = "UITabBarItem"; title = "Карта"; ObjectID = "515-Oy-NCJ"; */
+"515-Oy-NCJ.title" = "Карта";
 
 /* Class = "UITabBarItem"; title = "Me"; ObjectID = "6oR-5A-Tf5"; */
 "6oR-5A-Tf5.title" = "Me";
@@ -11,5 +11,5 @@
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "g5S-4H-rZY"; */
 "g5S-4H-rZY.normalTitle" = "Button";
 
-/* Class = "UITabBarItem"; title = "Menu"; ObjectID = "kYi-zn-i42"; */
-"kYi-zn-i42.title" = "Menu";
+/* Class = "UITabBarItem"; title = "Справочник"; ObjectID = "kYi-zn-i42"; */
+"kYi-zn-i42.title" = "Справочник";

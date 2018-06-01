@@ -25,19 +25,24 @@ class Router {
         var vc = UIViewController()
         switch key {
         case 0:
-            vc = FacultiesVC.instantiate()
-//          vc = AboutVC.instantiate()
+            vc = AboutVC.instantiate()
         case 1:
             vc = FacultiesVC.instantiate()
         case 2:
-            vc = FacultiesVC.instantiate()
-//          vc = DepartmentsVC.instantiate()
+            vc = AdditionVC.instantiate()
+            if let vc = vc as? AdditionVC {
+                vc.additionType = .cafe
+            }
         case 3:
-            vc = FacultiesVC.instantiate()
-//          vc = HealthUnitVC.instantiate()
+            vc = AdditionVC.instantiate()
+            if let vc = vc as? AdditionVC {
+                vc.additionType = .healthUnit
+            }
         case 4:
-            vc = FacultiesVC.instantiate()
-//          vc = LibrariesVC.instantiate()
+            vc = AdditionVC.instantiate()
+            if let vc = vc as? AdditionVC {
+                vc.additionType = .library
+            }
         case 5:
             vc = FacultiesVC.instantiate()
 //          vc = FoodVC.instantiate()

@@ -85,7 +85,7 @@ class MapVC: UIViewController, UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Map.title".localized
+        navigationItem.title = "Бизнес-центр Лэтиция"
         mapView.image = dataSource.mapImages[0]
         setButtonBackgroundsForButtons(pressedButtonIndex: 1)
         setupScrollView()
@@ -124,7 +124,7 @@ class MapVC: UIViewController, UIScrollViewDelegate {
     }
     
     func setupScrollView() {
-        scrollView.minimumZoomScale = 0.18
+        scrollView.minimumZoomScale = 0.65
         scrollView.zoomScale = scrollView.minimumZoomScale
         scrollView.contentSize = mapView.frame.size
     }
@@ -139,7 +139,7 @@ class MapVC: UIViewController, UIScrollViewDelegate {
         for button in notPressed {
             button.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         }
-        notPressed[pressedButtonIndex - 1].backgroundColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+        notPressed[pressedButtonIndex - 1].backgroundColor = #colorLiteral(red: 0, green: 0.1826862782, blue: 0.7505155457, alpha: 1)
     }
     
     func scrollViewDidZoom(_ scrollView: UIScrollView) {

@@ -5,7 +5,6 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,19 +21,23 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K4H-B1-9xU">
                         <rect key="frame" x="0.0" y="0.0" width="331" height="81"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="753" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.90000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="Lqc-vz-Llx">
-                                <rect key="frame" x="16" y="32" width="37" height="17.5"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="forward" translatesAutoresizingMaskIntoConstraints="NO" id="TIy-Sb-hJv">
-                                <rect key="frame" x="305" y="30.5" width="10" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="10" id="2Rt-4Q-RdV"/>
-                                    <constraint firstAttribute="width" secondItem="TIy-Sb-hJv" secondAttribute="height" multiplier="1:2" id="cni-F4-fuY"/>
-                                </constraints>
-                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="hMz-mf-QRf">
+                                <rect key="frame" x="16" y="4" width="299" height="73"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="753" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.90000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="Lqc-vz-Llx">
+                                        <rect key="frame" x="0.0" y="0.0" width="39.5" height="34.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                        <color key="textColor" red="0.0" green="0.1826862782" blue="0.75051554570000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="753" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.89999997615814209" translatesAutoresizingMaskIntoConstraints="NO" id="PIu-ck-q0I">
+                                        <rect key="frame" x="0.0" y="38.5" width="37" height="34.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                        <color key="textColor" red="0.0" green="0.1826862782" blue="0.75051554570000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qfn-G0-kOF">
                                 <rect key="frame" x="16" y="80" width="315" height="1"/>
                                 <color key="backgroundColor" red="0.90980392160000001" green="0.92941176469999998" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -45,16 +48,13 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Lqc-vz-Llx" firstAttribute="centerY" secondItem="TIy-Sb-hJv" secondAttribute="centerY" id="2wL-YL-iOW"/>
+                            <constraint firstAttribute="trailing" secondItem="hMz-mf-QRf" secondAttribute="trailing" constant="16" id="5Jx-yj-3uK"/>
                             <constraint firstAttribute="bottom" secondItem="qfn-G0-kOF" secondAttribute="bottom" id="8Wz-Lq-NMF"/>
-                            <constraint firstItem="Lqc-vz-Llx" firstAttribute="leading" secondItem="K4H-B1-9xU" secondAttribute="leading" constant="16" id="C8l-mV-lHz"/>
                             <constraint firstItem="qfn-G0-kOF" firstAttribute="leading" secondItem="K4H-B1-9xU" secondAttribute="leading" constant="16" id="Mn3-Qe-fom"/>
-                            <constraint firstItem="TIy-Sb-hJv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Lqc-vz-Llx" secondAttribute="trailing" constant="8" id="RMg-h1-lM0"/>
-                            <constraint firstItem="TIy-Sb-hJv" firstAttribute="centerY" secondItem="K4H-B1-9xU" secondAttribute="centerY" id="ZHh-q4-V6S"/>
-                            <constraint firstAttribute="trailing" secondItem="TIy-Sb-hJv" secondAttribute="trailing" constant="16" id="ldf-1H-MBC"/>
-                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Lqc-vz-Llx" secondAttribute="bottom" constant="5" id="sWq-Vo-IfZ"/>
+                            <constraint firstAttribute="bottom" secondItem="hMz-mf-QRf" secondAttribute="bottom" constant="4" id="Op1-GS-mYS"/>
+                            <constraint firstItem="hMz-mf-QRf" firstAttribute="top" secondItem="K4H-B1-9xU" secondAttribute="top" constant="4" id="TMn-nV-PWE"/>
                             <constraint firstAttribute="trailing" secondItem="qfn-G0-kOF" secondAttribute="trailing" id="u8N-QN-AUv"/>
-                            <constraint firstItem="Lqc-vz-Llx" firstAttribute="top" relation="greaterThanOrEqual" secondItem="K4H-B1-9xU" secondAttribute="top" constant="5" id="wrN-kj-qOW"/>
+                            <constraint firstItem="hMz-mf-QRf" firstAttribute="leading" secondItem="K4H-B1-9xU" secondAttribute="leading" constant="16" id="wbJ-vG-FZk"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -69,13 +69,10 @@
             <size key="customSize" width="331" height="81"/>
             <connections>
                 <outlet property="container" destination="K4H-B1-9xU" id="VGx-3P-cDZ"/>
-                <outlet property="forwardImageView" destination="TIy-Sb-hJv" id="C05-GN-qbC"/>
+                <outlet property="subTitleLabel" destination="PIu-ck-q0I" id="2s9-t9-Nvz"/>
                 <outlet property="titleLabel" destination="Lqc-vz-Llx" id="elo-aK-EMm"/>
             </connections>
             <point key="canvasLocation" x="52.5" y="-104.5"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="forward" width="8" height="13"/>
-    </resources>
 </document>

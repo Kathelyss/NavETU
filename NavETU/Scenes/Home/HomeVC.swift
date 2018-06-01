@@ -1,5 +1,5 @@
 //
-//  MenuVC.swift
+//  HomeVC.swift
 //  NavETU
 //
 //  Created by Екатерина Рыжова on 17.09.17.
@@ -15,13 +15,21 @@ class HomeVC: UIViewController {
     fileprivate var previousScrollOffset: CGFloat = 0
     let dataSource = HomeDataSource()
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationItem.title = "Бизнес-центр Лэтиция"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.register(HomeCell.nib, forCellWithReuseIdentifier: "HomeCell")
-        title = "Home.title".localized
         
-        dataSource.createFakeData()
-    }    
+        dataSource.createData()
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationItem.title = nil
+    }
 }
 
 // MARK: UICollectionViewDataSource

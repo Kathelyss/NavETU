@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		943D055D20C0737A00D3B3C0 /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943D055C20C0737900D3B3C0 /* AboutVC.swift */; };
+		943D055F20C12AD600D3B3C0 /* AdditionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943D055E20C12AD600D3B3C0 /* AdditionVC.swift */; };
 		94406CBF1F6FB59200A67656 /* HomeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94406CBE1F6FB59200A67656 /* HomeDataSource.swift */; };
 		94406CC11F6FB5A200A67656 /* HomeCellModelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94406CC01F6FB5A200A67656 /* HomeCellModelBuilder.swift */; };
 		94406CC61F6FB65600A67656 /* MeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94406CC51F6FB65600A67656 /* MeDataSource.swift */; };
@@ -59,6 +61,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		943D055C20C0737900D3B3C0 /* AboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
+		943D055E20C12AD600D3B3C0 /* AdditionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionVC.swift; sourceTree = "<group>"; };
 		94406CBE1F6FB59200A67656 /* HomeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataSource.swift; sourceTree = "<group>"; };
 		94406CC01F6FB5A200A67656 /* HomeCellModelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCellModelBuilder.swift; sourceTree = "<group>"; };
 		94406CC51F6FB65600A67656 /* MeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeDataSource.swift; sourceTree = "<group>"; };
@@ -136,6 +140,8 @@
 				9489C0E61F6F06260011E5AE /* HomeVC.swift */,
 				94406CBE1F6FB59200A67656 /* HomeDataSource.swift */,
 				94406CC01F6FB5A200A67656 /* HomeCellModelBuilder.swift */,
+				943D055C20C0737900D3B3C0 /* AboutVC.swift */,
+				943D055E20C12AD600D3B3C0 /* AdditionVC.swift */,
 				94F640022095CA5400F071F4 /* Faculties */,
 			);
 			path = Home;
@@ -415,6 +421,7 @@
 				94406CD71F6FB8F300A67656 /* XIBInitableCell.swift in Sources */,
 				94E1540B20AF20A9009533B7 /* PathView.swift in Sources */,
 				94F640012095CA4800F071F4 /* FacultiesDataSource.swift in Sources */,
+				943D055D20C0737A00D3B3C0 /* AboutVC.swift in Sources */,
 				94406CC61F6FB65600A67656 /* MeDataSource.swift in Sources */,
 				94406CD41F6FB76600A67656 /* MapDataSource.swift in Sources */,
 				9489C0E11F6F04690011E5AE /* AppDelegate.swift in Sources */,
@@ -423,6 +430,7 @@
 				94406CBF1F6FB59200A67656 /* HomeDataSource.swift in Sources */,
 				9460FAD020A8685000D63C2C /* GraphUnits.swift in Sources */,
 				9460FACB20A856AB00D63C2C /* FacultyCell.swift in Sources */,
+				943D055F20C12AD600D3B3C0 /* AdditionVC.swift in Sources */,
 				9489C0ED1F6F065A0011E5AE /* MapVC.swift in Sources */,
 				9489C0E51F6F05BA0011E5AE /* Routable.swift in Sources */,
 				94DD7D7F1F6F0C210079E7B1 /* Services.swift in Sources */,
