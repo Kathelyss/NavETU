@@ -15,7 +15,7 @@ struct SearchFields {
 }
 
 class MapDataSource {
-    let mapImages: [UIImage] = [#imageLiteral(resourceName: "floor1"), #imageLiteral(resourceName: "floor2"), #imageLiteral(resourceName: "floor3"), #imageLiteral(resourceName: "floor4"), #imageLiteral(resourceName: "floor5"), #imageLiteral(resourceName: "floor6")]
+    let mapImages: [UIImage] = [#imageLiteral(resourceName: "floor1"), #imageLiteral(resourceName: "floor2"), #imageLiteral(resourceName: "floor5")]
     var buildingGraph: Building!
     var allNodes: [Node] = []
     var path: [Node] = []
@@ -58,10 +58,7 @@ class MapDataSource {
             let floor1 = Floor(number: 1, nodes: nodes.filter { $0.floor == 1 })
             let floor2 = Floor(number: 2, nodes: nodes.filter { $0.floor == 2 })
             let floor3 = Floor(number: 3, nodes: nodes.filter { $0.floor == 3 })
-            let floor4 = Floor(number: 4, nodes: nodes.filter { $0.floor == 4 })
-            let floor5 = Floor(number: 5, nodes: nodes.filter { $0.floor == 5 })
-            let floor6 = Floor(number: 6, nodes: nodes.filter { $0.floor == 6 })
-            return Building(floors: [floor1, floor2, floor3, floor4, floor5, floor6])
+            return Building(floors: [floor1, floor2, floor3])
         } catch {
             print("Error \(error). Couldn't create building")
         }

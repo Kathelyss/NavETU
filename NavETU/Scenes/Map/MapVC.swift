@@ -14,11 +14,8 @@ class MapVC: UIViewController, UIScrollViewDelegate {
     @IBOutlet var floorButtons: UIStackView!
     @IBOutlet var firstFloorButton: UIButton!
     @IBOutlet var secondFloorButton: UIButton!
-    @IBOutlet var searchButton: UIButton!    
     @IBOutlet var thirdFloorButton: UIButton!
-    @IBOutlet var fourthFloorButton: UIButton!
-    @IBOutlet var fifthFloorButton: UIButton!
-    @IBOutlet var sixthFloorButton: UIButton!
+    @IBOutlet var searchButton: UIButton!    
     
     var pathView: PathView!
     var pathViewIsAdded: Bool = false
@@ -58,27 +55,6 @@ class MapVC: UIViewController, UIScrollViewDelegate {
         mapView.image = dataSource.mapImages[pathView.currentFloorNumber]
     }
     
-    @IBAction func tapFourthFloorButton(_ sender: UIButton) {
-        setButtonBackgroundsForButtons(pressedButtonIndex: 4)
-        pathView.frame = mapView.bounds
-        pathView.currentFloorNumber = 3
-        mapView.image = dataSource.mapImages[pathView.currentFloorNumber]
-    }
-    
-    @IBAction func tapFifthFloorButton(_ sender: UIButton) {
-        setButtonBackgroundsForButtons(pressedButtonIndex: 5)
-        pathView.frame = mapView.bounds
-        pathView.currentFloorNumber = 4
-        mapView.image = dataSource.mapImages[pathView.currentFloorNumber]
-    }
-    
-    @IBAction func tapSixthFloorButton(_ sender: UIButton) {
-        setButtonBackgroundsForButtons(pressedButtonIndex: 6)
-        pathView.frame = mapView.bounds
-        pathView.currentFloorNumber = 5
-        mapView.image = dataSource.mapImages[pathView.currentFloorNumber]
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Бизнес-центр Лэтиция"
@@ -111,9 +87,6 @@ class MapVC: UIViewController, UIScrollViewDelegate {
         case 0: setButtonBackgroundsForButtons(pressedButtonIndex: 1)
         case 1: setButtonBackgroundsForButtons(pressedButtonIndex: 2)
         case 2: setButtonBackgroundsForButtons(pressedButtonIndex: 3)
-        case 3: setButtonBackgroundsForButtons(pressedButtonIndex: 4)
-        case 4: setButtonBackgroundsForButtons(pressedButtonIndex: 5)
-        case 5: setButtonBackgroundsForButtons(pressedButtonIndex: 6)
         default:
             setButtonBackgroundsForButtons(pressedButtonIndex: 1)
         }
@@ -130,8 +103,7 @@ class MapVC: UIViewController, UIScrollViewDelegate {
     }
     
     func setButtonBackgroundsForButtons(pressedButtonIndex: Int) {
-        var notPressed: [UIButton] = [firstFloorButton, secondFloorButton, thirdFloorButton,
-                                      fourthFloorButton, fifthFloorButton, sixthFloorButton]
+        var notPressed: [UIButton] = [firstFloorButton, secondFloorButton, thirdFloorButton]
         for button in notPressed {
             button.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         }

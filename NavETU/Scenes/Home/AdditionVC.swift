@@ -32,20 +32,20 @@ class AdditionVC: UIViewController, Routable {
             headerLabel.text = "Кафе ''Редукция''"
             infoTextView.text =
             "Необычная кухня, внимательный персонал и приятная атмосфера - всё это Мы!\n\nОткрыты для Вас с 10:00 до 19:00"
-            bottomLabel.text = "1 этаж, помещение 105"
+            bottomLabel.text = "1 этаж, помещение 106"
         } else if additionType == .library {
             navigationItem.title = "Библиотека"
             backgroundImageView.image = #imageLiteral(resourceName: "library")
             headerLabel.text = "Пожалуй, лучшее место для отдыха!"
             infoTextView.text = "\nРежим работы:\nс 09:00 до 17:00\n"
-            bottomLabel.text = "3 этаж, помещение 307"
+            bottomLabel.text = "2 этаж, помещение 201"
         } else if additionType == .healthUnit {
             navigationItem.title = "Медпункт"
             backgroundImageView.image = #imageLiteral(resourceName: "health")
             headerLabel.text = "Наша работа - забота о Вашем здоровье!"
             infoTextView.text =
             "\nМедпункт работает круглосуточно\n"
-            bottomLabel.text = "1 этаж, помещение 110"
+            bottomLabel.text = "1 этаж, помещение 102"
         }
     }
 }

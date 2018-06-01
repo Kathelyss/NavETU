@@ -13,7 +13,7 @@ class ToiletsVC: UIViewController, Routable {
     @IBOutlet var collectionView: UICollectionView!
     fileprivate var previousScrollOffset: CGFloat = 0
     
-    let floorCount: Int = 6
+    let floorCount: Int = 3
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,8 +48,16 @@ extension ToiletsVC: UICollectionViewDelegate {
                         forItemAt indexPath: IndexPath) {
         if let cell = cell as? WcCell {
             cell.headerLabel.text = "\(indexPath.row + 1) этаж"
-            cell.leftLabel.text = "пом. \(indexPath.row + 1)30"
-            cell.rightLabel.text = "пом. \(indexPath.row + 1)31"
+            if indexPath.row == 0 {
+                cell.leftLabel.text = "помещение 103"
+                cell.rightLabel.text = "помещение 104"
+            } else if indexPath.row == 1 {
+                cell.leftLabel.text = "помещение 210"
+                cell.rightLabel.text = "помещение 205"
+            } else if indexPath.row == 2 {
+                cell.leftLabel.text = "помещение 314"
+                cell.rightLabel.text = "помещение 310"
+            }
             cell.separator.isHidden = indexPath.row == floorCount - 1
         }
     }
