@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		943D055D20C0737A00D3B3C0 /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943D055C20C0737900D3B3C0 /* AboutVC.swift */; };
 		943D055F20C12AD600D3B3C0 /* AdditionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943D055E20C12AD600D3B3C0 /* AdditionVC.swift */; };
+		943D056120C141CA00D3B3C0 /* ToiletsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943D056020C141CA00D3B3C0 /* ToiletsVC.swift */; };
 		94406CBF1F6FB59200A67656 /* HomeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94406CBE1F6FB59200A67656 /* HomeDataSource.swift */; };
 		94406CC11F6FB5A200A67656 /* HomeCellModelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94406CC01F6FB5A200A67656 /* HomeCellModelBuilder.swift */; };
 		94406CC61F6FB65600A67656 /* MeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94406CC51F6FB65600A67656 /* MeDataSource.swift */; };
@@ -35,6 +36,8 @@
 		9489C0E91F6F06360011E5AE /* MeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9489C0E81F6F06360011E5AE /* MeVC.swift */; };
 		9489C0EB1F6F064D0011E5AE /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9489C0EA1F6F064D0011E5AE /* SearchVC.swift */; };
 		9489C0ED1F6F065A0011E5AE /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9489C0EC1F6F065A0011E5AE /* MapVC.swift */; };
+		94D9824E20C14D6B00C73969 /* WcCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D9824C20C14D6B00C73969 /* WcCell.swift */; };
+		94D9824F20C14D6B00C73969 /* WcCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94D9824D20C14D6B00C73969 /* WcCell.xib */; };
 		94DD7D7D1F6F078F0079E7B1 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DD7D7C1F6F078F0079E7B1 /* Router.swift */; };
 		94DD7D7F1F6F0C210079E7B1 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DD7D7E1F6F0C210079E7B1 /* Services.swift */; };
 		94DD7D891F6F0E680079E7B1 /* Home.strings in Resources */ = {isa = PBXBuildFile; fileRef = 94DD7D8B1F6F0E680079E7B1 /* Home.strings */; };
@@ -63,6 +66,7 @@
 /* Begin PBXFileReference section */
 		943D055C20C0737900D3B3C0 /* AboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
 		943D055E20C12AD600D3B3C0 /* AdditionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionVC.swift; sourceTree = "<group>"; };
+		943D056020C141CA00D3B3C0 /* ToiletsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToiletsVC.swift; sourceTree = "<group>"; };
 		94406CBE1F6FB59200A67656 /* HomeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataSource.swift; sourceTree = "<group>"; };
 		94406CC01F6FB5A200A67656 /* HomeCellModelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCellModelBuilder.swift; sourceTree = "<group>"; };
 		94406CC51F6FB65600A67656 /* MeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeDataSource.swift; sourceTree = "<group>"; };
@@ -92,6 +96,8 @@
 		9489C0E81F6F06360011E5AE /* MeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeVC.swift; sourceTree = "<group>"; };
 		9489C0EA1F6F064D0011E5AE /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		9489C0EC1F6F065A0011E5AE /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
+		94D9824C20C14D6B00C73969 /* WcCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WcCell.swift; sourceTree = "<group>"; };
+		94D9824D20C14D6B00C73969 /* WcCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WcCell.xib; sourceTree = "<group>"; };
 		94DD7D7C1F6F078F0079E7B1 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		94DD7D7E1F6F0C210079E7B1 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		94DD7D8C1F6F0E700079E7B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Home.strings; sourceTree = "<group>"; };
@@ -142,6 +148,7 @@
 				94406CC01F6FB5A200A67656 /* HomeCellModelBuilder.swift */,
 				943D055C20C0737900D3B3C0 /* AboutVC.swift */,
 				943D055E20C12AD600D3B3C0 /* AdditionVC.swift */,
+				943D056020C141CA00D3B3C0 /* ToiletsVC.swift */,
 				94F640022095CA5400F071F4 /* Faculties */,
 			);
 			path = Home;
@@ -273,6 +280,8 @@
 				94DD7DA71F6FB2960079E7B1 /* HomeCell.xib */,
 				9460FAC920A856AB00D63C2C /* FacultyCell.swift */,
 				9460FACA20A856AB00D63C2C /* FacultyCell.xib */,
+				94D9824C20C14D6B00C73969 /* WcCell.swift */,
+				94D9824D20C14D6B00C73969 /* WcCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -385,6 +394,7 @@
 				94DD7D9E1F6F0F680079E7B1 /* Map.strings in Resources */,
 				9489C0C71F6F000E0011E5AE /* LaunchScreen.storyboard in Resources */,
 				94DD7D891F6F0E680079E7B1 /* Home.strings in Resources */,
+				94D9824F20C14D6B00C73969 /* WcCell.xib in Resources */,
 				9489C0E21F6F04690011E5AE /* Assets.xcassets in Resources */,
 				94DD7D9A1F6F0F5E0079E7B1 /* Search.strings in Resources */,
 				94DD7D961F6F0F4E0079E7B1 /* Me.strings in Resources */,
@@ -407,6 +417,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				94DD7D7D1F6F078F0079E7B1 /* Router.swift in Sources */,
+				94D9824E20C14D6B00C73969 /* WcCell.swift in Sources */,
 				94406CC11F6FB5A200A67656 /* HomeCellModelBuilder.swift in Sources */,
 				94F640042095CAF800F071F4 /* FacultiesCellModelBuilder.swift in Sources */,
 				9489C0EB1F6F064D0011E5AE /* SearchVC.swift in Sources */,
@@ -420,6 +431,7 @@
 				94406CC81F6FB66600A67656 /* MeCellBuilder.swift in Sources */,
 				94406CD71F6FB8F300A67656 /* XIBInitableCell.swift in Sources */,
 				94E1540B20AF20A9009533B7 /* PathView.swift in Sources */,
+				943D056120C141CA00D3B3C0 /* ToiletsVC.swift in Sources */,
 				94F640012095CA4800F071F4 /* FacultiesDataSource.swift in Sources */,
 				943D055D20C0737A00D3B3C0 /* AboutVC.swift in Sources */,
 				94406CC61F6FB65600A67656 /* MeDataSource.swift in Sources */,

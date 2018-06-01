@@ -16,11 +16,6 @@ class FacultiesVC: UIViewController, Routable {
     fileprivate var previousScrollOffset: CGFloat = 0
     let dataSource = FacultiesDataSource()
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationItem.backBarButtonItem?.title = "Назад"
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.register(FacultyCell.nib, forCellWithReuseIdentifier: "FacultyCell")
@@ -60,6 +55,9 @@ extension FacultiesVC: UICollectionViewDelegate {
                         forItemAt indexPath: IndexPath) {
         let model = dataSource[indexPath]
         FacultiesCellBuilder.populate(cell: cell, with: model)
+        if let cell = cell as? FacultyCell {
+            cell.separator.isHidden = indexPath.row == dataSource.count - 1
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

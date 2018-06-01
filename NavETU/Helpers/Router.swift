@@ -44,11 +44,7 @@ class Router {
                 vc.additionType = .library
             }
         case 5:
-            vc = FacultiesVC.instantiate()
-//          vc = FoodVC.instantiate()
-        case 6:
-            vc = FacultiesVC.instantiate()
-//          vc = WaterClosetsVC.instantiate()
+            vc = ToiletsVC.instantiate()
         default:
             vc = ViewController.instantiate()
         }

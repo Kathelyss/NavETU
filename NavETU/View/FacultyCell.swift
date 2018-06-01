@@ -12,5 +12,6 @@ class FacultyCell: UICollectionViewCell, XIBInitableCell {
     @IBOutlet var container: UIView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var subTitleLabel: UILabel!
+    @IBOutlet var separator: UIView!
     
 }

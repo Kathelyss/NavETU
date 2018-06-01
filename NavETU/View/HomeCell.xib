@@ -20,20 +20,20 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l6V-zN-RE6">
-                        <rect key="frame" x="16" y="32.5" width="0.0" height="0.0"/>
+                        <rect key="frame" x="20" y="32.5" width="0.0" height="0.0"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
                         <color key="textColor" red="0.0" green="0.1826862782" blue="0.75051554570000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="forward" translatesAutoresizingMaskIntoConstraints="NO" id="QiM-IG-wxj">
-                        <rect key="frame" x="294" y="23" width="10" height="20"/>
+                        <rect key="frame" x="290" y="23" width="10" height="20"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="QiM-IG-wxj" secondAttribute="height" multiplier="1:2" id="M3r-3Q-l3l"/>
                             <constraint firstAttribute="width" constant="10" id="OdA-vp-mAJ"/>
                         </constraints>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TvC-XH-G4B">
-                        <rect key="frame" x="16" y="64.5" width="304" height="1"/>
+                        <rect key="frame" x="20" y="64.5" width="300" height="1"/>
                         <color key="backgroundColor" red="0.90980392160000001" green="0.92941176469999998" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="zzK-wp-xiP"/>
@@ -42,13 +42,13 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="l6V-zN-RE6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="27i-ER-h1s"/>
+                    <constraint firstItem="l6V-zN-RE6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="27i-ER-h1s"/>
                     <constraint firstItem="l6V-zN-RE6" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="9S8-vz-aEb"/>
                     <constraint firstAttribute="bottom" secondItem="TvC-XH-G4B" secondAttribute="bottom" id="GqZ-oA-Hll"/>
-                    <constraint firstAttribute="trailing" secondItem="QiM-IG-wxj" secondAttribute="trailing" constant="16" id="MbQ-m4-Dtx"/>
+                    <constraint firstAttribute="trailing" secondItem="QiM-IG-wxj" secondAttribute="trailing" constant="20" id="MbQ-m4-Dtx"/>
                     <constraint firstItem="QiM-IG-wxj" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="l6V-zN-RE6" secondAttribute="trailing" constant="8" id="Sa2-qM-FJO"/>
                     <constraint firstAttribute="trailing" secondItem="TvC-XH-G4B" secondAttribute="trailing" id="gQV-7R-Nb2"/>
-                    <constraint firstItem="TvC-XH-G4B" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="o8j-SS-BzO"/>
+                    <constraint firstItem="TvC-XH-G4B" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="o8j-SS-BzO"/>
                     <constraint firstItem="QiM-IG-wxj" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="xWb-zf-JfT"/>
                 </constraints>
             </tableViewCellContentView>
@@ -56,6 +56,7 @@
             <connections>
                 <outlet property="container" destination="H2p-sc-9uM" id="6jq-EU-ZdV"/>
                 <outlet property="forwardImageView" destination="QiM-IG-wxj" id="hNz-lf-m4Q"/>
+                <outlet property="separator" destination="TvC-XH-G4B" id="rw6-Td-VIF"/>
                 <outlet property="titleLabel" destination="l6V-zN-RE6" id="931-AS-fpI"/>
             </connections>
             <point key="canvasLocation" x="123" y="4"/>

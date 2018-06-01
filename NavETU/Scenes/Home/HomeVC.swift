@@ -58,6 +58,9 @@ extension HomeVC: UICollectionViewDelegate {
                         forItemAt indexPath: IndexPath) {
         let model = dataSource[indexPath]
         HomeCellBuilder.populate(cell: cell, with: model)
+        if let cell = cell as? HomeCell {
+            cell.separator.isHidden = indexPath.row == dataSource.count - 1
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -74,7 +77,7 @@ extension HomeVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.bounds.width, height: 70)
+        return CGSize(width: collectionView.bounds.width, height: 75)
     }
     
 }
