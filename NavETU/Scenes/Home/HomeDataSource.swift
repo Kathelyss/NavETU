@@ -16,7 +16,7 @@ class HomeDataSource {
         self.items.append(HomeCellModel(title: "О бизнес-центре"))
         self.items.append(HomeCellModel(title: "Компании-арендаторы"))
         self.items.append(HomeCellModel(title: "Кафетерий"))
-        self.items.append(HomeCellModel(title: "Здравпункт"))
+        self.items.append(HomeCellModel(title: "Медпункт"))
         self.items.append(HomeCellModel(title: "Библиотека"))
         self.items.append(HomeCellModel(title: "Туалеты"))
     }
