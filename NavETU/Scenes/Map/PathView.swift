@@ -71,8 +71,12 @@ class PathView: UIView {
         
         context.setStrokeColor(#colorLiteral(red: 0, green: 0.1826862782, blue: 0.7505155457, alpha: 0.4952910959))
         context.strokePath()
-        if let first = nodes.first, let start = allPathNodes.first, first != start {
+        if let first = nodes.first, let pathStart = allPathNodes.first, first != pathStart {
             drawCircle(nodeLocation: getCoordinates(for: first))
+        }
+        if let last = nodes.last, let pathEnd = allPathNodes.last, last != pathEnd, nodes.count > 1 {
+            drawArrow(penultimateNodeLocation: getCoordinates(for: nodes[nodes.count - 2]),
+                      lastNodeLocation: getCoordinates(for: last))
         }
     }
     
@@ -82,14 +86,50 @@ class PathView: UIView {
             return
         }
         
+        context.setLineWidth(5)
         context.move(to: nodeLocation)
         let radius = CGFloat(8)
         context.addEllipse(in: CGRect(x: nodeLocation.x - radius,
-                                             y: nodeLocation.y - radius,
-                                             width: radius * 2,
-                                             height: radius * 2))
-        context.setFillColor(#colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1))
+                                      y: nodeLocation.y - radius,
+                                      width: radius * 2,
+                                      height: radius * 2))
+        context.setFillColor(#colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1))
         context.fillPath()
+    }
+    
+    func drawArrow(penultimateNodeLocation: CGPoint, lastNodeLocation: CGPoint) {
+        guard let context = UIGraphicsGetCurrentContext() else {
+            print("Error: no context found!")
+            return
+        }
+        
+        var firstPoint = CGPoint(x: 0, y: 0)
+        var secondPoint = CGPoint(x: 0, y: 0)
+        context.setLineWidth(5)
+        let arrowOffset = CGFloat(10)
+        if lastNodeLocation.x < penultimateNodeLocation.x {
+            firstPoint = CGPoint(x: lastNodeLocation.x + arrowOffset, y: lastNodeLocation.y + arrowOffset)
+            secondPoint = CGPoint(x: lastNodeLocation.x + arrowOffset, y: lastNodeLocation.y - arrowOffset)
+            //to left
+        } else if lastNodeLocation.x > penultimateNodeLocation.x {
+            firstPoint = CGPoint(x: lastNodeLocation.x - arrowOffset, y: lastNodeLocation.y + arrowOffset)
+            secondPoint = CGPoint(x: lastNodeLocation.x - arrowOffset, y: lastNodeLocation.y - arrowOffset)
+            //to right
+        } else if lastNodeLocation.y < penultimateNodeLocation.y {
+            firstPoint = CGPoint(x: lastNodeLocation.x - arrowOffset, y: lastNodeLocation.y + arrowOffset)
+            secondPoint = CGPoint(x: lastNodeLocation.x + arrowOffset, y: lastNodeLocation.y + arrowOffset)
+            //up
+        } else if lastNodeLocation.y > penultimateNodeLocation.y {
+            firstPoint = CGPoint(x: lastNodeLocation.x - arrowOffset, y: lastNodeLocation.y - arrowOffset)
+            secondPoint = CGPoint(x: lastNodeLocation.x + arrowOffset, y: lastNodeLocation.y - arrowOffset)
+            //down
+        }
+        context.move(to: firstPoint)
+        context.addLine(to: lastNodeLocation)
+        context.addLine(to: secondPoint)
+        
+        context.setStrokeColor(#colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1))
+        context.strokePath()
     }
     
     func getCoordinates(for node: Node) -> CGPoint {
