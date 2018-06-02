@@ -14,6 +14,10 @@ struct SearchFields {
     var destinationNodeIndex: Int
 }
 
+enum NavETUError: Error {
+        case noSourceNode, noDestinationNode, noPathFound
+}
+
 class MapDataSource {
     let mapImages: [UIImage] = [#imageLiteral(resourceName: "floor1"), #imageLiteral(resourceName: "floor2"), #imageLiteral(resourceName: "floor5")]
     var buildingGraph: Building!
@@ -51,7 +55,8 @@ class MapDataSource {
                     return Building(floors: [])
                 }
                 
-                first.connectTo(node: second, edgeLength: structure.length, edgeWeight: structure.weight)
+                first.connectTo(node: second, edgeLength: structure.length,
+                                firstEdgeWeight: structure.firstWeight, secondEdgeWeight: structure.secondWeight)
             }
             let floor1 = Floor(number: 1, nodes: nodes.filter { $0.floor == 1 })
             let floor2 = Floor(number: 2, nodes: nodes.filter { $0.floor == 2 })
@@ -67,7 +72,8 @@ class MapDataSource {
         var visitedNodes: Set<Node> = []
         var frontier: [Path] = [] {
             didSet {
-                frontier.sort { return $0.totalLength < $1.totalLength } // the frontier has to be always ordered
+                frontier.sort { return $0.totalLength * $0.totalWeight < $1.totalLength * $1.totalWeight }
+                // the frontier has to be always ordered
             }
         }
         frontier.append(Path(to: source)) // the frontier = path that starts nowhere and ends in the source
@@ -86,23 +92,23 @@ class MapDataSource {
         return nil
     }
     
-    func findPath(in building: [Node], from sourceNodeName: String, to destinationNodeName: String) -> [Node] {
+    func findPath(in building: [Node], from sourceNodeName: String, to destinationNodeName: String) throws -> [Node] {
         let sourceNode = building.filter( { $0.name == sourceNodeName }).first
         let destinationNode = building.filter( { $0.name == destinationNodeName }).first
-        guard let source = sourceNode, let destination = destinationNode else {
-            print("No path found!")
-            return []
+        guard let source = sourceNode else {
+            throw NavETUError.noSourceNode
+        }
+        guard let destination = destinationNode else {
+        throw NavETUError.noDestinationNode
         }
         
-        let path = dijkstraAlgorithm(from: source, to: destination)
-        if let path = path {
+        if let path = dijkstraAlgorithm(from: source, to: destination) {
             let pathNodeNamesArray: [String] = path.nodes.reversed().compactMap({$0}).map({$0.name})
             let resultString = pathNodeNamesArray.reduce("") { $0 + " ➝ " + $1 }
             print("Path: \(resultString), length = \(path.totalLength)")
             return path.nodes.reversed()
         } else {
-            print("No path found")
-            return []
+            throw NavETUError.noPathFound
         }
     }
 }

@@ -37,9 +37,9 @@ class Node: Hashable, Codable, CustomStringConvertible {
         self.floor = floor
     }
     
-    func connectTo(node: Node, edgeLength: Int, edgeWeight: Int) {
-        self.edges.append(Edge(first: self, second: node, length: edgeLength, weight: edgeWeight))
-        node.edges.append(Edge(first: node, second: self, length: edgeLength, weight: edgeWeight))
+    func connectTo(node: Node, edgeLength: Int, firstEdgeWeight: Int, secondEdgeWeight: Int) {
+        self.edges.append(Edge(first: self, second: node, length: edgeLength, weight: firstEdgeWeight))
+        node.edges.append(Edge(first: node, second: self, length: edgeLength, weight: secondEdgeWeight))
     }
     
 }
@@ -48,12 +48,12 @@ class Edge: Codable, CustomStringConvertible {
     let firstNode: Node
     let secondNode: Node
     let length: Int
-    let weight: Int? //for stairs
+    let weight: Int //for stairs
     var description: String {
         return "\(firstNode.name) - > \(secondNode.name) = \(length)"
     }
     
-    init(first: Node, second: Node, length: Int, weight: Int?) {
+    init(first: Node, second: Node, length: Int, weight: Int) {
         firstNode = first
         secondNode = second
         self.length = length
@@ -81,6 +81,7 @@ class Building {
 
 class Path {
     public let totalLength: Int
+    public let totalWeight: Int
     public let node: Node
     public let previousPath: Path?
     
@@ -97,8 +98,10 @@ class Path {
     init(to node: Node, via edge: Edge? = nil, previousPath path: Path? = nil) {
         if let previousPath = path, let viaEdge = edge {
             self.totalLength = viaEdge.length + previousPath.totalLength
+            self.totalWeight = viaEdge.weight + previousPath.totalWeight
         } else {
             self.totalLength = 0
+            self.totalWeight = 0
         }
         self.node = node
         self.previousPath = path

@@ -26,30 +26,62 @@ class MapVC: UIViewController, UIScrollViewDelegate {
     @IBAction func unwindToMapVC(segue: UIStoryboardSegue) {
         if let vc = segue.source as? ModalSearchVC {
             if let fromText = vc.fromTextField.text, let toText = vc.toTextField.text {
-                dataSource.path = dataSource.findPath(in: dataSource.allNodes, from: fromText, to: toText)
-                pathView.allPathNodes = dataSource.path
-                clearRouteButton.isHidden = false
-                if let floor = dataSource.path.first?.floor {
-                    setSourceNodeFloor(sourceNodeFloor: floor - 1)
+                do {
+                    let path = try dataSource.findPath(in: dataSource.allNodes, from: fromText, to: toText)
+                    dataSource.path = path
+                    pathView.allPathNodes = dataSource.path
+                    clearRouteButton.isHidden = false
+                    if let floor = dataSource.path.first?.floor {
+                        setSourceNodeFloor(sourceNodeFloor: floor - 1)
+                        setPins()
+                    }
+                } catch NavETUError.noPathFound {
+                    showErrorAlert(title: "Ошибка", message: "Невозможно построить маршрут")
+                } catch NavETUError.noSourceNode {
+                    showErrorAlert(title: "Ошибка", message: "Пункт отправления не найден.\nПроверьте номер помещения!")
+                } catch NavETUError.noDestinationNode {
+                    showErrorAlert(title: "Ошибка", message: "Пункт назначения не найден.\nПроверьте номер помещения!")
+                } catch {
+                    showErrorAlert(title: "Ошибка", message: "Что-то пошло не так 😕")
                 }
             }
         }
     }
     
     @IBAction func tapFloorButton(_ sender: UIButton) {
+        guard let text = sender.titleLabel?.text, let number = Int(text) else { return }
+        setButtonBackgroundsForButtons(pressedButtonIndex: number)
+        mapView.image = dataSource.mapImages[number - 1]
         pathView.frame = mapView.bounds
-        mapView.image = dataSource.mapImages[pathView.currentFloorNumber]
-        if sender.titleLabel?.text == "1" {
-            setButtonBackgroundsForButtons(pressedButtonIndex: 1)
-            pathView.currentFloorNumber = 0
-        } else if sender.titleLabel?.text == "2" {
-            setButtonBackgroundsForButtons(pressedButtonIndex: 2)
-            pathView.currentFloorNumber = 1
-        } else if sender.titleLabel?.text == "3" {
-            setButtonBackgroundsForButtons(pressedButtonIndex: 3)
-            pathView.currentFloorNumber = 2
-        }
+        pathView.currentFloorNumber = number - 1
+        setPins()
         lastTappedButton = sender
+    }
+    
+    func showErrorAlert(title: String, message: String) {
+        let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "Mkay", style: .cancel, handler: nil)
+        ac.addAction(cancel)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.present(ac, animated: true, completion: nil)
+        }
+    }
+    
+    func setPins() {
+        if let startNodeForCurrentFloor = pathView.nodes.first, let pathStartNode = pathView.allPathNodes.first,
+            startNodeForCurrentFloor == pathStartNode {
+            pathView.startView.center = pathView.getCoordinates(for: pathStartNode)
+            pathView.startView.isHidden = false
+        } else {
+            pathView.startView.isHidden = true
+        }
+        if let lastNodeForCurrentFloor = pathView.nodes.last, let pathEndNode = pathView.allPathNodes.last,
+            lastNodeForCurrentFloor == pathEndNode {
+            pathView.endView.center = pathView.getCoordinates(for: pathEndNode)
+            pathView.endView.isHidden = false
+        } else {
+            pathView.endView.isHidden = true
+        }
     }
     
     var lastTappedButton: UIButton?
@@ -61,6 +93,8 @@ class MapVC: UIViewController, UIScrollViewDelegate {
             return
         }
         
+        pathView.startView.isHidden = true
+        pathView.endView.isHidden = true
         tapFloorButton(button)
         clearRouteButton.isHidden = true
     }
@@ -92,15 +126,17 @@ class MapVC: UIViewController, UIScrollViewDelegate {
     }
     
     func setSourceNodeFloor(sourceNodeFloor: Int) {
-        pathView.currentFloorNumber = sourceNodeFloor
         mapView.image = dataSource.mapImages[sourceNodeFloor]
-        switch sourceNodeFloor {
-        case 0: setButtonBackgroundsForButtons(pressedButtonIndex: 1)
-        case 1: setButtonBackgroundsForButtons(pressedButtonIndex: 2)
-        case 2: setButtonBackgroundsForButtons(pressedButtonIndex: 3)
-        default:
-            setButtonBackgroundsForButtons(pressedButtonIndex: 1)
-        }
+        pathView.frame = mapView.bounds
+        pathView.currentFloorNumber = sourceNodeFloor
+        setButtonBackgroundsForButtons(pressedButtonIndex: sourceNodeFloor + 1)
+        //        switch sourceNodeFloor {
+        //        case 0: setButtonBackgroundsForButtons(pressedButtonIndex: 1)
+        //        case 1: setButtonBackgroundsForButtons(pressedButtonIndex: 2)
+        //        case 2: setButtonBackgroundsForButtons(pressedButtonIndex: 3)
+        //        default:
+        //            setButtonBackgroundsForButtons(pressedButtonIndex: 1)
+        //        }
     }
     
     func setupScrollView() {
