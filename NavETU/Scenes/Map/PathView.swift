@@ -46,7 +46,7 @@ class PathView: UIView {
         return view
     }()
     
-    let lineWidth = CGFloat(8)
+    let lineWidth = CGFloat(5)
     var offset: CGFloat {
         return lineWidth / 2
     }
@@ -70,6 +70,8 @@ class PathView: UIView {
         }
         
         context.setStrokeColor(#colorLiteral(red: 0, green: 0.1826862782, blue: 0.7505155457, alpha: 0.4952910959))
+        context.setLineCap(.round)
+        context.setLineDash(phase: CGFloat(10), lengths: [CGFloat(15), CGFloat(10)])
         context.strokePath()
         if let first = nodes.first, let pathStart = allPathNodes.first, first != pathStart {
             drawCircle(nodeLocation: getCoordinates(for: first))
