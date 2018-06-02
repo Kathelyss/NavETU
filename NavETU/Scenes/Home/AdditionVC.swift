@@ -38,7 +38,7 @@ class AdditionVC: UIViewController, Routable {
             backgroundImageView.image = #imageLiteral(resourceName: "library")
             headerLabel.text = "Пожалуй, лучшее место для отдыха!"
             infoTextView.text = "\nРежим работы:\nс 09:00 до 17:00\n"
-            bottomLabel.text = "2 этаж, помещение 201"
+            bottomLabel.text = "2 этаж, помещения 201-202"
         } else if additionType == .healthUnit {
             navigationItem.title = "Медпункт"
             backgroundImageView.image = #imageLiteral(resourceName: "health")

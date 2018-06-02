@@ -108,7 +108,7 @@ class PathView: UIView {
         var firstPoint = CGPoint(x: 0, y: 0)
         var secondPoint = CGPoint(x: 0, y: 0)
         context.setLineWidth(5)
-        let arrowOffset = CGFloat(10)
+        let arrowOffset = CGFloat(8)
         if lastNodeLocation.x < penultimateNodeLocation.x {
             firstPoint = CGPoint(x: lastNodeLocation.x + arrowOffset, y: lastNodeLocation.y + arrowOffset)
             secondPoint = CGPoint(x: lastNodeLocation.x + arrowOffset, y: lastNodeLocation.y - arrowOffset)
@@ -126,6 +126,8 @@ class PathView: UIView {
             secondPoint = CGPoint(x: lastNodeLocation.x + arrowOffset, y: lastNodeLocation.y - arrowOffset)
             //down
         }
+        context.setLineCap(.round)
+        context.setLineDash(phase: CGFloat(0), lengths: [CGFloat(0), CGFloat(0)])
         context.move(to: firstPoint)
         context.addLine(to: lastNodeLocation)
         context.addLine(to: secondPoint)

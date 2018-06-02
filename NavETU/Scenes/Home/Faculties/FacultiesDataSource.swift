@@ -16,7 +16,7 @@ class FacultiesDataSource {
         self.items.append(FacultiesCellModel(title: "ООО ''Тюльпан''", subtitle: "помещения 114-115"))
         self.items.append(FacultiesCellModel(title: "ЗАО ''Black Swan''", subtitle: "помещения 101, 107-108"))
         self.items.append(FacultiesCellModel(title: "ОАО ''АэроПлот''", subtitle: "помещение 111-112"))
-        self.items.append(FacultiesCellModel(title: "ООО ''ПалеX''", subtitle: "помещения 202-204"))
+        self.items.append(FacultiesCellModel(title: "ООО ''ПалеX''", subtitle: "помещения 203-204"))
         self.items.append(FacultiesCellModel(title: "ПАО ''Строитель''", subtitle: "помещения 206-208"))
         self.items.append(FacultiesCellModel(title: "ЗАО ''Параболитик''", subtitle: "помещение 211-213"))
         self.items.append(FacultiesCellModel(title: "ИП Гусёнкин И.В.", subtitle: "помещения 214-215"))
