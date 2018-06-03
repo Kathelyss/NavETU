@@ -15,7 +15,7 @@ struct SearchFields {
 }
 
 enum NavETUError: Error {
-        case noSourceNode, noDestinationNode, noPathFound
+        case noSourceNode, noDestinationNode, noPathFound, sthWentWrong
 }
 
 class MapDataSource {
@@ -99,7 +99,7 @@ class MapDataSource {
             throw NavETUError.noSourceNode
         }
         guard let destination = destinationNode else {
-        throw NavETUError.noDestinationNode
+            throw NavETUError.noDestinationNode
         }
         
         if let path = dijkstraAlgorithm(from: source, to: destination) {

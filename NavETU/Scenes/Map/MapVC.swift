@@ -27,6 +27,8 @@ class MapVC: UIViewController, UIScrollViewDelegate {
         if let vc = segue.source as? ModalSearchVC {
             if let fromText = vc.fromTextField.text, let toText = vc.toTextField.text {
                 do {
+                    try legalize(source: fromText, destination: toText)
+                    
                     let path = try dataSource.findPath(in: dataSource.allNodes, from: fromText, to: toText)
                     dataSource.path = path
                     pathView.allPathNodes = dataSource.path
@@ -58,9 +60,28 @@ class MapVC: UIViewController, UIScrollViewDelegate {
         lastTappedButton = sender
     }
     
+    func legalize(source: String, destination: String) throws {
+        let legalNames = ["вход", "вход2", "вход3", "балкон", "лифт1", "лифт2", "лифт3"]
+        if !legalNames.contains(source),
+            let sourceNumber = Int(source),
+            (sourceNumber < 101 || sourceNumber > 115) &&
+            (sourceNumber < 201 || sourceNumber > 215) &&
+            (sourceNumber < 301 || sourceNumber > 318) {
+            throw NavETUError.noSourceNode
+        }
+        if !legalNames.contains(destination),
+            let destNumber = Int(destination),
+            (destNumber < 101 || destNumber > 115) &&
+            (destNumber < 201 || destNumber > 215) &&
+            (destNumber < 301 || destNumber > 318) {
+            throw NavETUError.noDestinationNode
+        }
+        
+    }
+    
     func showErrorAlert(title: String, message: String) {
         let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let cancel = UIAlertAction(title: "Mkay", style: .cancel, handler: nil)
+        let cancel = UIAlertAction(title: "ОК", style: .cancel, handler: nil)
         ac.addAction(cancel)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.present(ac, animated: true, completion: nil)
