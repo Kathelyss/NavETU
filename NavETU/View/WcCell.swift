@@ -15,9 +15,5 @@ class WcCell: UICollectionViewCell, XIBInitableCell {
     @IBOutlet var rightImageView: UIImageView!
     @IBOutlet var rightLabel: UILabel!
     @IBOutlet var separator: UIView!
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
 
 }

@@ -83,7 +83,6 @@ extension FacultiesVC: UICollectionViewDelegateFlowLayout {
 extension FacultiesVC: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let currentOffset = scrollView.contentOffset.y
-//        let velocity = currentOffset - previousScrollOffset
         previousScrollOffset = currentOffset
     }
 }

@@ -130,13 +130,6 @@ class MapVC: UIViewController, UIScrollViewDelegate {
         pathView.frame = mapView.bounds
         pathView.currentFloorNumber = sourceNodeFloor
         setButtonBackgroundsForButtons(pressedButtonIndex: sourceNodeFloor + 1)
-        //        switch sourceNodeFloor {
-        //        case 0: setButtonBackgroundsForButtons(pressedButtonIndex: 1)
-        //        case 1: setButtonBackgroundsForButtons(pressedButtonIndex: 2)
-        //        case 2: setButtonBackgroundsForButtons(pressedButtonIndex: 3)
-        //        default:
-        //            setButtonBackgroundsForButtons(pressedButtonIndex: 1)
-        //        }
     }
     
     func setupScrollView() {
