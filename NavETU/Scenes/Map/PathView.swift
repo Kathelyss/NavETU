@@ -48,9 +48,6 @@ class PathView: UIView {
     }()
     
     let lineWidth = CGFloat(5)
-    var offset: CGFloat {
-        return lineWidth / 2
-    }
     
     public override func draw(_ rect: CGRect) {
         guard nodes.isEmpty == false, allPathNodes.isEmpty == false else { return }
@@ -108,7 +105,7 @@ class PathView: UIView {
         
         var firstPoint = CGPoint(x: 0, y: 0)
         var secondPoint = CGPoint(x: 0, y: 0)
-        context.setLineWidth(5)
+        context.setLineWidth(lineWidth)
         let arrowOffset = CGFloat(8)
         if lastNodeLocation.x < penultimateNodeLocation.x {
             firstPoint = CGPoint(x: lastNodeLocation.x + arrowOffset, y: lastNodeLocation.y + arrowOffset)
@@ -139,8 +136,8 @@ class PathView: UIView {
     func getCoordinates(for node: Node) -> CGPoint {
         let xMultiplier = bounds.size.width / Constant.xCellCount
         let yMultiplier = bounds.size.height / Constant.yCellCount
-        return CGPoint(x: node.coordinates.x * xMultiplier + offset,
-                       y: node.coordinates.y * yMultiplier - offset)
+        return CGPoint(x: node.coordinates.x * xMultiplier + lineWidth,
+                       y: node.coordinates.y * yMultiplier + lineWidth)
     }
 }
 
