@@ -125,6 +125,7 @@ class PathView: UIView {
             //down
         }
         context.setLineCap(.round)
+        context.setLineDash(phase: CGFloat(0), lengths: [CGFloat(1), CGFloat(0)])
         context.move(to: firstPoint)
         context.addLine(to: lastNodeLocation)
         context.addLine(to: secondPoint)
