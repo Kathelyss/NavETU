@@ -9,7 +9,8 @@
 import UIKit
 
 struct Constant {
-    public static let cellCount = CGFloat(21.0)
+    public static let xCellCount = CGFloat(37.5)
+    public static let yCellCount = CGFloat(57)
 }
 
 class PathView: UIView {
@@ -127,7 +128,6 @@ class PathView: UIView {
             //down
         }
         context.setLineCap(.round)
-        context.setLineDash(phase: CGFloat(0), lengths: [CGFloat(0), CGFloat(0)])
         context.move(to: firstPoint)
         context.addLine(to: lastNodeLocation)
         context.addLine(to: secondPoint)
@@ -137,10 +137,10 @@ class PathView: UIView {
     }
     
     func getCoordinates(for node: Node) -> CGPoint {
-        let xMultiplier = bounds.size.width / Constant.cellCount
-        let yMultiplier = bounds.size.height / Constant.cellCount
+        let xMultiplier = bounds.size.width / Constant.xCellCount
+        let yMultiplier = bounds.size.height / Constant.yCellCount
         return CGPoint(x: node.coordinates.x * xMultiplier + offset,
-                       y: bounds.size.height - (node.coordinates.y * yMultiplier - offset))
+                       y: node.coordinates.y * yMultiplier - offset)
     }
 }
 
