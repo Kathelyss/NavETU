@@ -243,15 +243,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="X88-Aa-tGC" firstAttribute="top" secondItem="U8D-2P-Ecp" secondAttribute="top" id="Crp-Zb-uN2"/>
-                            <constraint firstItem="dKn-9Y-LPp" firstAttribute="top" secondItem="DyX-sA-IOF" secondAttribute="bottom" constant="8" id="QS4-Y8-dwn"/>
+                            <constraint firstItem="dKn-9Y-LPp" firstAttribute="top" secondItem="U8D-2P-Ecp" secondAttribute="top" constant="64" id="Pgp-cX-b27"/>
                             <constraint firstItem="DyX-sA-IOF" firstAttribute="top" secondItem="U8D-2P-Ecp" secondAttribute="top" constant="16" id="RoB-Hb-1F1"/>
                             <constraint firstItem="U8D-2P-Ecp" firstAttribute="bottom" secondItem="X88-Aa-tGC" secondAttribute="bottom" id="d9G-Sb-N43"/>
                             <constraint firstItem="Wjh-x8-bG4" firstAttribute="top" secondItem="U8D-2P-Ecp" secondAttribute="top" constant="16" id="iJj-AO-NHC"/>
                             <constraint firstItem="U8D-2P-Ecp" firstAttribute="trailing" secondItem="X88-Aa-tGC" secondAttribute="trailing" id="j9N-sP-iFv"/>
-                            <constraint firstItem="dKn-9Y-LPp" firstAttribute="leading" secondItem="DyX-sA-IOF" secondAttribute="leading" id="nBw-O8-Kbk"/>
-                            <constraint firstItem="dKn-9Y-LPp" firstAttribute="trailing" secondItem="DyX-sA-IOF" secondAttribute="trailing" id="pSM-Ym-8uj"/>
                             <constraint firstItem="U8D-2P-Ecp" firstAttribute="trailing" secondItem="Wjh-x8-bG4" secondAttribute="trailing" constant="8" id="qCe-fo-TAv"/>
                             <constraint firstItem="DyX-sA-IOF" firstAttribute="leading" secondItem="U8D-2P-Ecp" secondAttribute="leading" constant="16" id="rky-3T-46R"/>
+                            <constraint firstItem="dKn-9Y-LPp" firstAttribute="leading" secondItem="U8D-2P-Ecp" secondAttribute="leading" constant="16" id="weN-Qg-E8q"/>
                             <constraint firstItem="X88-Aa-tGC" firstAttribute="leading" secondItem="U8D-2P-Ecp" secondAttribute="leading" id="yNu-aa-zFp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="U8D-2P-Ecp"/>
